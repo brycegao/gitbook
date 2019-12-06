@@ -1,0 +1,601 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Lint解决线上问题 · 技术博客</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="brycegao">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="安卓9启动Activity流程分析和优化建议.html" />
+    
+    
+    <link rel="prev" href="贝壳找房适配动态权限.html" />
+    
+
+    
+    
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Blankj","repo":"glory","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://git.lianjia.com/luweiyu001/lion/wikis" target="_blank" class="custom-link">技术沉淀</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    基础知识
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="HashMap源码分析.html">
+            
+                <a href="HashMap源码分析.html">
+            
+                    
+                    HashMap源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="解决安卓贝壳找房APP首页滑动卡顿问题.html">
+            
+                <a href="解决安卓贝壳找房APP首页滑动卡顿问题.html">
+            
+                    
+                    安卓卡顿原因分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="精细化曝光策略.html">
+            
+                <a href="精细化曝光策略.html">
+            
+                    
+                    精细化曝光策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="贝壳找房解决全局悬浮窗问题.html">
+            
+                <a href="贝壳找房解决全局悬浮窗问题.html">
+            
+                    
+                    贝壳找房解决全局悬浮窗问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="自定义android gradle插件.html">
+            
+                <a href="自定义android gradle插件.html">
+            
+                    
+                    自定义gradle插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="贝壳找房适配动态权限.html">
+            
+                <a href="贝壳找房适配动态权限.html">
+            
+                    
+                    贝壳找房适配动态权限
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.7" data-path="Lint解决线上问题.html">
+            
+                <a href="Lint解决线上问题.html">
+            
+                    
+                    Lint解决线上问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="安卓9启动Activity流程分析和优化建议.html">
+            
+                <a href="安卓9启动Activity流程分析和优化建议.html">
+            
+                    
+                    Android9启动Activity流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    章节2
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Chapter2/1.html">
+            
+                <a href="../Chapter2/1.html">
+            
+                    
+                    Chapter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Chapter2/2.html">
+            
+                <a href="../Chapter2/2.html">
+            
+                    
+                    测试标题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Lint解决线上问题</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#android-lint&#x89E3;&#x51B3;&#x7EBF;&#x4E0A;&#x95EE;&#x9898;"><b></b>Android-Lint&#x89E3;&#x51B3;&#x7EBF;&#x4E0A;&#x95EE;&#x9898;</a></li><ul><ul><li><span class="title-icon "></span><a href="#&#x4E00;&#x3001;&#x80CC;&#x666F;"><b></b>&#x4E00;&#x3001;&#x80CC;&#x666F;</a></li><li><span class="title-icon "></span><a href="#&#x4E8C;&#x3001;&#x95EE;&#x9898;&#x539F;&#x56E0;"><b></b>&#x4E8C;&#x3001;&#x95EE;&#x9898;&#x539F;&#x56E0;</a></li><li><span class="title-icon "></span><a href="#&#x4E09;&#x3001;&#x89E3;&#x51B3;&#x601D;&#x8DEF;"><b></b>&#x4E09;&#x3001;&#x89E3;&#x51B3;&#x601D;&#x8DEF;</a></li><li><span class="title-icon "></span><a href="#&#x56DB;&#x3001;&#x81EA;&#x5B9A;&#x4E49;lint&#x89C4;&#x5219;"><b></b>&#x56DB;&#x3001;&#x81EA;&#x5B9A;&#x4E49;Lint&#x89C4;&#x5219;</a></li><li><span class="title-icon "></span><a href="#&#x4E94;&#x3001;&#x96C6;&#x6210;&#x65B9;&#x5F0F;"><b></b>&#x4E94;&#x3001;&#x96C6;&#x6210;&#x65B9;&#x5F0F;</a></li></ul></ul></ul></div><a href="#android-lint&#x89E3;&#x51B3;&#x7EBF;&#x4E0A;&#x95EE;&#x9898;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="android-lint&#x89E3;&#x51B3;&#x7EBF;&#x4E0A;&#x95EE;&#x9898;"><a name="android-lint&#x89E3;&#x51B3;&#x7EBF;&#x4E0A;&#x95EE;&#x9898;" class="anchor-navigation-ex-anchor" href="#android-lint&#x89E3;&#x51B3;&#x7EBF;&#x4E0A;&#x95EE;&#x9898;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="android-lint&#x89E3;&#x51B3;&#x7EBF;&#x4E0A;&#x95EE;&#x9898;" class="plugin-anchor" href="#android-lint&#x89E3;&#x51B3;&#x7EBF;&#x4E0A;&#x95EE;&#x9898;"><i class="fa fa-link" aria-hidden="true"></i></a>Android-Lint&#x89E3;&#x51B3;&#x7EBF;&#x4E0A;&#x95EE;&#x9898;</h1>
+<blockquote>
+<p>&#x9AD8;&#x745E; &#x5927;&#x524D;&#x7AEF;&#x7814;&#x53D1;&#x90E8;&#xFF0C;&#x90AE;&#x7BB1;&#xFF1A;gaorui006@ke.com&#xFF0C;&#x7535;&#x8BDD;&#xFF1A;13718691711; 2018&#x5E74;5&#x6708;&#x52A0;&#x5165;&#x8D1D;&#x58F3;&#x627E;&#x623F;&#xFF0C;&#x4EFB;&#x804C;Android&#x5DE5;&#x7A0B;&#x5E08;&#xFF0C;&#x76EE;&#x524D;&#x8D1F;&#x8D23;&#x8D1D;&#x58F3;&#x627E;&#x623F;app&#x5B89;&#x5353;&#x7AEF;&#x7814;&#x53D1;&#x5DE5;&#x4F5C;&#x3002;</p>
+<p>&#x6458;&#x8981;&#xFF1A;&#x8D1D;&#x58F3;&#x627E;&#x623F;app&#x5D29;&#x6E83;&#x7387;&#x4E00;&#x76F4;&#x5728;&#x5343;&#x5206;&#x4E4B;&#x4E09;&#x5DE6;&#x53F3;&#xFF0C; &#x89E3;&#x51B3;&#x4E00;&#x4E2A;crash&#x540E;&#x53C8;&#x4F1A;&#x51FA;&#x73B0;&#x65B0;&#x7684;crash&#xFF0C; &#x6211;&#x4EEC;&#x7684;&#x76EE;&#x6807;&#x662F;&#x6BCF;&#x89E3;&#x51B3;&#x4E00;&#x4E2A;crash&#x540E;&#xFF0C;&#x5C31;&#x4E0D;&#x518D;&#x53D1;&#x751F;&#x540C;&#x7C7B;&#x578B;&#x7684;crash&#x3002; &#x901A;&#x8FC7;&#x8C03;&#x7814;&#x53D1;&#x73B0;&#x6DFB;&#x52A0;Lint&#x81EA;&#x5B9A;&#x4E49;&#x89C4;&#x5219;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x4E00;&#x90E8;&#x5206;&#x95EE;&#x9898;&#x3002;</p>
+</blockquote>
+<h3 id="&#x4E00;&#x3001;&#x80CC;&#x666F;"><a name="&#x4E00;&#x3001;&#x80CC;&#x666F;" class="anchor-navigation-ex-anchor" href="#&#x4E00;&#x3001;&#x80CC;&#x666F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4E00;&#x3001;&#x80CC;&#x666F;" class="plugin-anchor" href="#&#x4E00;&#x3001;&#x80CC;&#x666F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E00;&#x3001;&#x80CC;&#x666F;</h3>
+<p>  &#x5728;&#x53D1;&#x8D1D;&#x58F3;2.1.1&#x7248;&#x672C;&#x7B2C;&#x4E00;&#x6B21;&#x7070;&#x5EA6;&#x65F6;&#x9047;&#x5230;&#x4E86;&#x4E00;&#x4E2A;&#x5D29;&#x6E83;&#xFF08;&#x5D29;&#x6E83;&#x5728;&#x79DF;&#x623F;&#xFF09;&#xFF0C;&#x7B2C;&#x4E8C;&#x6B21;&#x7070;&#x5EA6;&#x7248;&#x672C;&#x65F6;&#x53D1;&#x751F;&#x4E86;&#x76F8;&#x540C;&#x539F;&#x56E0;&#x7684;&#x5D29;&#x6E83;&#xFF08;&#x5D29;&#x5728;&#x4E86;&#x4E8C;&#x624B;&#xFF09;&#x3002; &#x5F53;&#x65F6;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x53D1;&#x73B0;&#x4E00;&#x5904;&#x89E3;&#x51B3;&#x4E00;&#x5904;&#xFF0C; &#x4F46;&#x6CA1;&#x53D1;&#x73B0;&#x7684;&#x9690;&#x85CF;&#x95EE;&#x9898;&#x662F;&#x4E2A;&#x5B9A;&#x65F6;&#x70B8;&#x5F39;&#x3002; </p>
+<p>&#x65E5;&#x5FD7;&#xFF1A;
+java.lang.RuntimeException: Parcelable encountered IOException writing serializable object (name = com.homelink.customer.host.manage.model.response.HostCommentBean) at android.os.Parcel.writeSerializable(Parcel.java:1823) at android.os.Parcel.writeValue(Parcel.java:1771) at android.os.Parcel.writeArrayMapInternal(Parcel.java:838)</p>
+<h3 id="&#x4E8C;&#x3001;&#x95EE;&#x9898;&#x539F;&#x56E0;"><a name="&#x4E8C;&#x3001;&#x95EE;&#x9898;&#x539F;&#x56E0;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x3001;&#x95EE;&#x9898;&#x539F;&#x56E0;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4E8C;&#x3001;&#x95EE;&#x9898;&#x539F;&#x56E0;" class="plugin-anchor" href="#&#x4E8C;&#x3001;&#x95EE;&#x9898;&#x539F;&#x56E0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C;&#x3001;&#x95EE;&#x9898;&#x539F;&#x56E0;</h3>
+<p>   &#x8FD9;&#x4E2A;crash&#x7684;&#x539F;&#x56E0;&#x662F;&#x5F53;&#x524D;&#x7C7B;&#x5B9E;&#x73B0;&#x4E86;Serializable&#x63A5;&#x53E3;&#xFF0C;&#x4F46;&#x6210;&#x5458;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x672A;&#x5B9E;&#x73B0;Serializable&#x63A5;&#x53E3;&#xFF0C; &#x5BFC;&#x81F4;Activity/Fragment&#x5728;&#x7528;Intent&#x4F20;&#x503C;&#x65F6;&#x51FA;&#x73B0;&#x5E8F;&#x5217;&#x5316;&#x9519;&#x8BEF;&#xFF0C;&#x6700;&#x7EC8;&#x5D29;&#x5728;&#x4E86;1823&#x884C;&#x3002;</p>
+<pre><code> try {
+1817            ObjectOutputStream oos = new ObjectOutputStream(baos);
+1818            oos.writeObject(s);
+1819            oos.close();
+1820
+1821            writeByteArray(baos.toByteArray());
+1822        } catch (IOException ioe) {
+1823            throw new RuntimeException(&quot;Parcelable encountered &quot; +
+1824                &quot;IOException writing serializable object (name = &quot; + name +
+1825                &quot;)&quot;, ioe);
+1826        }
+</code></pre><h3 id="&#x4E09;&#x3001;&#x89E3;&#x51B3;&#x601D;&#x8DEF;"><a name="&#x4E09;&#x3001;&#x89E3;&#x51B3;&#x601D;&#x8DEF;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x89E3;&#x51B3;&#x601D;&#x8DEF;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4E09;&#x3001;&#x89E3;&#x51B3;&#x601D;&#x8DEF;" class="plugin-anchor" href="#&#x4E09;&#x3001;&#x89E3;&#x51B3;&#x601D;&#x8DEF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x89E3;&#x51B3;&#x601D;&#x8DEF;</h3>
+<p>  &#x73B0;&#x6709;&#x9879;&#x76EE;&#x4EE3;&#x7801;&#x5B58;&#x5728;&#x5E8F;&#x5217;&#x5316;&#x5D29;&#x6E83;&#x7684;&#x6F5C;&#x5728;&#x98CE;&#x9669;&#xFF0C;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x6280;&#x672F;&#x624B;&#x6BB5;&#x627E;&#x51FA;&#x6765;&#x5462;&#xFF1F; &#x4EE5;&#x540E;&#x5982;&#x4F55;&#x4E0D;&#x518D;&#x72AF;&#x76F8;&#x540C;&#x9519;&#x8BEF;&#xFF1F; &#x73B0;&#x6709;&#x7684;Lint&#x3001;FindBugs&#x3001;CheckStyle&#x662F;&#x5907;&#x9009;&#x65B9;&#x6848;&#xFF0C; &#x6700;&#x7EC8;&#x56E0;&#x4E3A;Lint&#x53EF;&#x4EE5;&#x5B9E;&#x65F6;&#x68C0;&#x67E5;&#x5E76;&#x667A;&#x80FD;&#x63D0;&#x9192;&#x800C;&#x9009;&#x62E9;&#x4F7F;&#x7528;Lint&#x5B9E;&#x73B0;&#xFF0C;&#x5373;&#x7528;&#x5DE5;&#x5177;&#x5B9E;&#x65F6;&#x63D0;&#x9192;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x6F5C;&#x5728;&#x98CE;&#x9669;&#x3002;</p>
+<p> <center><img src="https://raw.githubusercontent.com/brycegao/open-resource/master/lintrules/result.png" width="400" hegiht="300" align="center"></center>
+ <center>&#x671F;&#x671B;&#x6548;&#x679C;</center> &lt;/br&gt;</p>
+<p>  <center><img src="https://raw.githubusercontent.com/brycegao/open-resource/master/lintrules/result1.png" width="400" hegiht="300" align="center"></center>
+ <center>&#x4E8C;&#x624B;&#x63D2;&#x4EF6;&#x626B;&#x63CF;&#x7ED3;&#x679C;</center> &lt;/br&gt;
+   &#x4F7F;&#x7528;lint&#x81EA;&#x5B9A;&#x4E49;&#x63D2;&#x4EF6;&#x626B;&#x63CF;&#x4E8C;&#x624B;&#x63D2;&#x4EF6;&#x627E;&#x5230;&#x6240;&#x6709;Serializable&#x5D29;&#x6E83;&#x7684;&#x98CE;&#x9669;&#x70B9;&#xFF0C;&#x4ECE;&#x800C;&#x4ECE;&#x6839;&#x672C;&#x4E0A;&#x89E3;&#x51B3;Serializable&#x5E8F;&#x5217;&#x5316;&#x5D29;&#x6E83;&#x95EE;&#x9898;&#x3002;</p>
+<h3 id="&#x56DB;&#x3001;&#x81EA;&#x5B9A;&#x4E49;lint&#x89C4;&#x5219;"><a name="&#x56DB;&#x3001;&#x81EA;&#x5B9A;&#x4E49;lint&#x89C4;&#x5219;" class="anchor-navigation-ex-anchor" href="#&#x56DB;&#x3001;&#x81EA;&#x5B9A;&#x4E49;lint&#x89C4;&#x5219;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x56DB;&#x3001;&#x81EA;&#x5B9A;&#x4E49;lint&#x89C4;&#x5219;" class="plugin-anchor" href="#&#x56DB;&#x3001;&#x81EA;&#x5B9A;&#x4E49;lint&#x89C4;&#x5219;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DB;&#x3001;&#x81EA;&#x5B9A;&#x4E49;Lint&#x89C4;&#x5219;</h3>
+<p>  &#x611F;&#x89C9;&#x8DDF;&#x5199;Java&#x4E1A;&#x52A1;&#x4EE3;&#x7801;&#x5F88;&#x50CF;&#xFF0C; &#x53EA;&#x9700;&#x8981;&#x4E86;&#x89E3;API&#x529F;&#x80FD;&#x5C31;&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x4E0A;&#x624B;&#x3002; &#x81EA;&#x5B9A;&#x4E49;Lint&#x6709;&#x4E2A;&#x603B;&#x5165;&#x53E3;IssueRegistry&#x7C7B;&#xFF0C;&#x5728;List&#x91CC;&#x8FD4;&#x56DE;&#x9700;&#x8981;&#x68C0;&#x67E5;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x89C4;&#x5219;&#x5373;&#x53EF;&#x3002;</p>
+<pre><code>public class SerializableDetector extends Detector implements Detector.UastScanner {
+
+  private static final String CLASS_SERIALIZABLE = &quot;java.io.Serializable&quot;;
+
+  private String[] basicTypes = {&quot;byte&quot;, &quot;short&quot;, &quot;int&quot;, &quot;long&quot;, &quot;float&quot;, &quot;double&quot;,
+      &quot;char&quot;, &quot;boolean&quot;, &quot;byte[]&quot;, &quot;short[]&quot;, &quot;int[]&quot;, &quot;long[]&quot;, &quot;float[]&quot;, &quot;double[]&quot;,
+      &quot;char[]&quot;, &quot;boolean[]&quot;,&quot;java.lang.String&quot;, &quot;java.lang.Double&quot;,
+      &quot;java.lang.Boolean&quot;, &quot;java.lang.Long&quot;, &quot;java.lang.Short&quot;,
+      &quot;java.lang.Integer&quot;, &quot;java.lang.Char&quot;, &quot;java.lang.Boolean&quot;,&quot;java.lang.String[]&quot;,
+      &quot;java.lang.Double[]&quot;, &quot;java.lang.Boolean[]&quot;, &quot;java.lang.Long[]&quot;, &quot;java.lang.Short[]&quot;,
+      &quot;java.lang.Integer[]&quot;, &quot;java.lang.Char[]&quot;, &quot;java.lang.Boolean[]&quot;};
+
+  private static HashSet&lt;String&gt; hashSet = new HashSet&lt;&gt;();
+
+  public static final Issue ISSUE = Issue.create(
+      &quot;ClassSerializable&quot;,
+      &quot;Bean&#x7C7B;&#x6210;&#x5458;&#x9700;&#x8981;&#x5B9E;&#x73B0;Serializable&#x63A5;&#x53E3;&quot;,
+      &quot;Bean&#x7C7B;&#x6210;&#x5458;&#x9700;&#x8981;&#x5B9E;&#x73B0;Serializable&#x63A5;&#x53E3;&quot;,
+      Category.SECURITY, 5, Severity.ERROR,
+      new Implementation(SerializableDetector.class, Scope.JAVA_FILE_SCOPE));
+
+  @Nullable
+  @Override
+  public List&lt;String&gt; applicableSuperClasses() {
+    //&#x7236;&#x7C7B;&#x662F;&quot;java.io.Serializable&quot;
+    return Collections.singletonList(CLASS_SERIALIZABLE);
+  }
+
+  @Override
+  public void visitClass(JavaContext context, UClass declaration) {
+    if (declaration instanceof UAnonymousClass) {
+      return;
+    }
+    sortClass(context, declaration);
+  }
+
+  //&#x9012;&#x5F52;&#x76F4;&#x5230;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;
+  private void sortClass(JavaContext context, UClass declaration) {
+    if (hashSet.contains(declaration.getPsi().getQualifiedName())) {
+      //&#x53C2;&#x8003;&#x52A8;&#x6001;&#x89C4;&#x5212;&#x7684;&#x5907;&#x5FD8;&#x5F55;&#x65B9;&#x5F0F;&#xFF0C;&#x8BA1;&#x7B97;&#x51FA;&#x7ED3;&#x679C;&#x7684;&#x7C7B;&#x4E0D;&#x518D;&#x8BA1;&#x7B97;&#x7B2C;&#x4E8C;&#x904D;
+      //System.out.println(declaration.getPsi().getQualifiedName() + &quot;&#x5DF2;&#x7ECF;&#x88AB;&#x8FC7;&#x6EE4;&quot;);
+      return;
+    }
+
+    UastParser parser = context.getClient().getUastParser(context.getProject());
+    boolean isSerialized = false;
+    for (PsiClassType psiClassType : declaration.getImplementsListTypes()) {
+      if (CLASS_SERIALIZABLE.equals(psiClassType.getCanonicalText())) {
+        //&#x5B9E;&#x73B0;&#x4E86;&#x5E8F;&#x5217;&#x5316;
+        isSerialized = true;
+        break;
+      }
+    }
+    //System.out.println(&quot;++++++&quot; + declaration.getPsi().getQualifiedName());
+    for (String type : basicTypes) {
+      if (type.equalsIgnoreCase(declaration.getPsi().getQualifiedName())) {
+        //&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x4F3C;&#x4E0D;&#x9700;&#x8981;&#x5B9E;&#x73B0;Serializable&#xFF0C;&#x7EE7;&#x7EED;&#x5224;&#x65AD;&#x5176;&#x5B83;&#x6210;&#x5458;&#x53D8;&#x91CF;
+        return;
+      }
+    }
+
+    if (!isSerialized) {
+      if (!hashSet.contains(declaration.getPsi().getQualifiedName())) {
+        context.report(ISSUE,
+            declaration.getNameIdentifier(),
+            context.getLocation(declaration.getNameIdentifier()),
+            String.format(&quot;&#x6210;&#x5458;&#x53D8;&#x91CF; `%1$s` &#x9700;&#x8981;&#x5B9E;&#x73B0;Serializable&#x63A5;&#x53E3;&quot;,
+                declaration.getPsi().getQualifiedName()));
+        hashSet.add(declaration.getPsi().getQualifiedName());
+        System.out.println(&quot;size&quot; + hashSet.size() + &quot;/&quot; + declaration.getPsi().getQualifiedName() + &quot;&#x6CA1;&#x5B9E;&#x73B0;&#x5E8F;&#x5217;&#x5316;&quot;);
+      }
+      return;
+    }
+
+    //&#x68C0;&#x67E5;&#x5185;&#x90E8;&#x7C7B;
+    for (UClass uClass : declaration.getInnerClasses()) {
+      //&#x9012;&#x5F52;&#x5224;&#x65AD;&#x5185;&#x90E8;&#x7C7B;, &#x67E5;&#x770B;&#x6210;&#x5458;&#x53C2;&#x6570;&#x662F;&#x5426;&#x5B9E;&#x73B0;&#x4E86;&#x5E8F;&#x5217;&#x5316;&#x65B9;&#x6CD5;
+      sortClass(context, uClass);
+    }
+
+    //&#x68C0;&#x67E5;&#x6210;&#x5458;&#x53D8;&#x91CF;
+    for (UField uField : declaration.getFields()) {
+      boolean isBasic = false;
+      for (String type : basicTypes) {
+        if (type.equalsIgnoreCase(uField.getType().getCanonicalText())) {
+          //&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x4F3C;&#x4E0D;&#x9700;&#x8981;&#x5B9E;&#x73B0;Serializable&#xFF0C;&#x7EE7;&#x7EED;&#x5224;&#x65AD;&#x5176;&#x5B83;&#x6210;&#x5458;&#x53D8;&#x91CF;
+          isBasic = true;
+          break;
+        }
+      }
+
+      if (isBasic) {
+        //&#x5982;&#x679C;&#x662F;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7EE7;&#x7EED;&#x5FAA;&#x73AF;
+        continue;
+      }
+
+      if (uField.getType().getCanonicalText()
+          .matches(&quot;^[A-Za-z0-9.]*[List|Set|Map]&lt;[A-Za-z0-9.]*&gt;$&quot;)) {
+        //&#x4F7F;&#x7528;&#x4E86;&#x6CDB;&#x578B;&#x5219;&#x5224;&#x65AD;&#x6CDB;&#x578B;&#x662F;&#x5426;&#x5B9E;&#x73B0;&#x4E86;Serializable
+        String genericType = uField.getType().getCanonicalText().substring(
+            uField.getType().getCanonicalText().indexOf(&quot;&lt;&quot;) + 1,
+            uField.getType().getCanonicalText().indexOf(&quot;&gt;&quot;));
+
+        PsiClass cls = parser.getEvaluator().findClass(genericType);
+        UClass uGeneric = context.getUastContext().getClass(cls);
+        sortClass(context, uGeneric);
+      } else {
+        PsiClass psiClass = parser.getEvaluator()
+            .findClass(uField.getType().getCanonicalText());
+        sortClass(context, context.getUastContext().getClass(psiClass));
+      }
+    }
+  }
+}
+</code></pre><h3 id="&#x4E94;&#x3001;&#x96C6;&#x6210;&#x65B9;&#x5F0F;"><a name="&#x4E94;&#x3001;&#x96C6;&#x6210;&#x65B9;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x4E94;&#x3001;&#x96C6;&#x6210;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4E94;&#x3001;&#x96C6;&#x6210;&#x65B9;&#x5F0F;" class="plugin-anchor" href="#&#x4E94;&#x3001;&#x96C6;&#x6210;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E94;&#x3001;&#x96C6;&#x6210;&#x65B9;&#x5F0F;</h3>
+<p>   &#x8003;&#x8651;&#x5230;lint&#x89C4;&#x5219;&#x4F1A;&#x66F4;&#x65B0;&#xFF0C; &#x4F7F;&#x7528;maven&#x5E93;&#x7BA1;&#x7406;&#x6BD4;&#x8F83;&#x65B9;&#x4FBF;&#xFF0C;&#x6240;&#x4EE5;&#x91C7;&#x7528;LinkedIn&#x65B9;&#x5F0F;&#x96C6;&#x6210;&#x5230;&#x9879;&#x76EE;&#x91CC;&#x3002;</p>
+<p>   &#x5728;build.gradle&#x91CC;&#x6DFB;&#x52A0;debugImplementation &apos;com.lianjia.lintrules:lib_lintrules:1.0.0-SNAPSHOT@aar&apos;&#xFF0C; 
+&#x7136;&#x540E;gradle sync&#x4E00;&#x4E0B;&#x5C31;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x81EA;&#x5B9A;&#x4E49;lint&#x89C4;&#x5219;&#xFF0C; &#x4E5F;&#x53EF;&#x4EE5;&#x6267;&#x884C;./gradlew lint&#x8F93;&#x51FA;&#x62A5;&#x544A;&#x3002; 
+  &#x76EE;&#x524D;&#x652F;&#x6301;lintrules&#x5E93;&#x652F;&#x6301;&#x626B;&#x63CF;Serializable&#x672A;&#x5E8F;&#x5217;&#x5316;&#x7C7B;&#x548C;&#x5E03;&#x5C40;xml&#x5F15;&#x7528;&#x4E86;&#x672A;&#x58F0;&#x660E;&#x7C7B;&#xFF0C; &#x540E;&#x7EED;&#x4F1A;&#x6839;&#x636E;&#x4E1A;&#x52A1;&#x5F00;&#x53D1;&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&#x65B0;&#x589E;&#x89C4;&#x5219;&#x3002; 
+   &#x7528;&#x6280;&#x672F;&#x624B;&#x6BB5;&#x89E3;&#x51B3;&#x7EBF;&#x4E0A;&#x5171;&#x6027;&#x95EE;&#x9898;&#x662F;&#x5199;&#x81EA;&#x5B9A;&#x4E49;lint&#x89C4;&#x5219;&#x7684;&#x7406;&#x7531;&#xFF0C; &#x76EE;&#x7684;&#x662F;&#x76F8;&#x540C;&#x9519;&#x8BEF;&#x4E0D;&#x8981;&#x72AF;&#x7B2C;&#x4E8C;&#x6B21;&#xFF0C;&#x9010;&#x6E10;&#x964D;&#x4F4E;&#x5D29;&#x6E83;&#x7387;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="贝壳找房适配动态权限.html" class="navigation navigation-prev " aria-label="Previous page: 贝壳找房适配动态权限">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="安卓9启动Activity流程分析和优化建议.html" class="navigation navigation-next " aria-label="Next page: Android9启动Activity流程">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Lint解决线上问题","level":"1.2.7","depth":2,"next":{"title":"Android9启动Activity流程","level":"1.2.8","depth":2,"path":"Chapter1/安卓9启动Activity流程分析和优化建议.md","ref":"Chapter1/安卓9启动Activity流程分析和优化建议.md","articles":[]},"previous":{"title":"贝壳找房适配动态权限","level":"1.2.6","depth":2,"path":"Chapter1/贝壳找房适配动态权限.md","ref":"Chapter1/贝壳找房适配动态权限.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","anchors","expandable-chapters","github","github-buttons","sharing-plus","anchor-navigation-ex","favicon","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":""},"livereload":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{},"github-buttons":{"buttons":[{"user":"Blankj","repo":"glory","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{}},"theme":"default","author":"brycegao","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","links":{"sidebar":{"技术沉淀":"http://git.lianjia.com/luweiyu001/lion/wikis"}},"gitbook":"3.2.3","description":"show me the code"},"file":{"path":"Chapter1/Lint解决线上问题.md","mtime":"2019-12-06T09:13:52.977Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-06T09:23:28.786Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

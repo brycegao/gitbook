@@ -1,0 +1,686 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Android9启动Activity流程 · 技术博客</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="brycegao">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="Lint解决线上问题.html" />
+    
+
+    
+    
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Blankj","repo":"glory","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://git.lianjia.com/luweiyu001/lion/wikis" target="_blank" class="custom-link">技术沉淀</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    基础知识
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="HashMap源码分析.html">
+            
+                <a href="HashMap源码分析.html">
+            
+                    
+                    HashMap源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="解决安卓贝壳找房APP首页滑动卡顿问题.html">
+            
+                <a href="解决安卓贝壳找房APP首页滑动卡顿问题.html">
+            
+                    
+                    安卓卡顿原因分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="精细化曝光策略.html">
+            
+                <a href="精细化曝光策略.html">
+            
+                    
+                    精细化曝光策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="贝壳找房解决全局悬浮窗问题.html">
+            
+                <a href="贝壳找房解决全局悬浮窗问题.html">
+            
+                    
+                    贝壳找房解决全局悬浮窗问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="自定义android gradle插件.html">
+            
+                <a href="自定义android gradle插件.html">
+            
+                    
+                    自定义gradle插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="贝壳找房适配动态权限.html">
+            
+                <a href="贝壳找房适配动态权限.html">
+            
+                    
+                    贝壳找房适配动态权限
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="Lint解决线上问题.html">
+            
+                <a href="Lint解决线上问题.html">
+            
+                    
+                    Lint解决线上问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.8" data-path="安卓9启动Activity流程分析和优化建议.html">
+            
+                <a href="安卓9启动Activity流程分析和优化建议.html">
+            
+                    
+                    Android9启动Activity流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    章节2
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Chapter2/1.html">
+            
+                <a href="../Chapter2/1.html">
+            
+                    
+                    Chapter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Chapter2/2.html">
+            
+                <a href="../Chapter2/2.html">
+            
+                    
+                    测试标题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Android9启动Activity流程</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x5B89;&#x5353;9&#x542F;&#x52A8;activity&#x6D41;&#x7A0B;&#x5206;&#x6790;&#x548C;&#x4F18;&#x5316;&#x5EFA;&#x8BAE;"><b></b>&#x5B89;&#x5353;9&#x542F;&#x52A8;Activity&#x6D41;&#x7A0B;&#x5206;&#x6790;&#x548C;&#x4F18;&#x5316;&#x5EFA;&#x8BAE;</a></li></ul></div><a href="#&#x5B89;&#x5353;9&#x542F;&#x52A8;activity&#x6D41;&#x7A0B;&#x5206;&#x6790;&#x548C;&#x4F18;&#x5316;&#x5EFA;&#x8BAE;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x5B89;&#x5353;9&#x542F;&#x52A8;activity&#x6D41;&#x7A0B;&#x5206;&#x6790;&#x548C;&#x4F18;&#x5316;&#x5EFA;&#x8BAE;"><a name="&#x5B89;&#x5353;9&#x542F;&#x52A8;activity&#x6D41;&#x7A0B;&#x5206;&#x6790;&#x548C;&#x4F18;&#x5316;&#x5EFA;&#x8BAE;" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x5353;9&#x542F;&#x52A8;activity&#x6D41;&#x7A0B;&#x5206;&#x6790;&#x548C;&#x4F18;&#x5316;&#x5EFA;&#x8BAE;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5B89;&#x5353;9&#x542F;&#x52A8;activity&#x6D41;&#x7A0B;&#x5206;&#x6790;&#x548C;&#x4F18;&#x5316;&#x5EFA;&#x8BAE;" class="plugin-anchor" href="#&#x5B89;&#x5353;9&#x542F;&#x52A8;activity&#x6D41;&#x7A0B;&#x5206;&#x6790;&#x548C;&#x4F18;&#x5316;&#x5EFA;&#x8BAE;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B89;&#x5353;9&#x542F;&#x52A8;Activity&#x6D41;&#x7A0B;&#x5206;&#x6790;&#x548C;&#x4F18;&#x5316;&#x5EFA;&#x8BAE;</h1>
+<blockquote>
+<p>&#x9AD8;&#x745E; &#x5927;&#x524D;&#x7AEF;&#x7814;&#x53D1;&#x90E8;&#xFF0C;&#x90AE;&#x7BB1;&#xFF1A;gaorui006@ke.com&#xFF0C;&#x7535;&#x8BDD;&#xFF1A;13718691711; 2018&#x5E74;5&#x6708;&#x52A0;&#x5165;&#x8D1D;&#x58F3;&#x627E;&#x623F;&#xFF0C;&#x4EFB;&#x804C;Android&#x5DE5;&#x7A0B;&#x5E08;&#xFF0C;&#x76EE;&#x524D;&#x8D1F;&#x8D23;&#x8D1D;&#x58F3;&#x627E;&#x623F;app&#x5B89;&#x5353;&#x7AEF;&#x7814;&#x53D1;&#x5DE5;&#x4F5C;&#x3002;</p>
+<p>&#x6458;&#x8981;&#xFF1A;&#x5206;&#x6790;Android9.0&#x542F;&#x52A8;Activity&#x6D41;&#x7A0B;&#x5E76;&#x7ED9;&#x51FA;&#x4F18;&#x5316;&#x5EFA;&#x8BAE;&#xFF1B;</p>
+</blockquote>
+<p>&#x601D;&#x8003;&#x5982;&#x4E0B;&#x95EE;&#x9898;&#xFF1A;</p>
+<p>1&#x3001;Android9&#x548C;&#x4E4B;&#x524D;&#x7248;&#x672C;startActivity&#x7684;&#x5DEE;&#x5F02;&#xFF1F;</p>
+<p>2&#x3001;&#x4E3A;&#x4EC0;&#x4E48;startActivity&#x662F;&#x5F02;&#x6B65;&#x7684;&#xFF1F;</p>
+<p>3&#x3001;&#x4E3A;&#x4EC0;&#x4E48;&#x5B89;&#x5353;Looper&#x6B7B;&#x5FAA;&#x73AF;&#x4E0D;&#x4F1A;&#x5BFC;&#x81F4;UI&#x5361;&#x6B7B;&#xFF1F;</p>
+<p>Android&#x4ECE;9.0&#x7248;&#x672C;&#x5F00;&#x59CB;&#x4FEE;&#x6539;&#x4E86;&#x542F;&#x52A8;Activity&#x90E8;&#x5206;&#x6D41;&#x7A0B;&#xFF0C; &#x8DDF;&#x4EE5;&#x5F80;&#x7248;&#x672C;&#x7684;&#x4E3B;&#x8981;&#x533A;&#x522B;&#x5728;&#x4E8E;&#x4F7F;&#x7528;Transaction&#x5E76;&#x5220;&#x9664;&#x4E86;ActivityThread&#x5185;&#x90E8;&#x7C7B;H&#x4E2D;100~109&#x7684;code&#x3002;</p>
+<p>&#x4ECE;Android8.0&#x5F00;&#x59CB;&#x4F7F;&#x7528;AIDL&#x66FF;&#x6362;Binder&#x5B9E;&#x73B0;&#x7CFB;&#x7EDF;&#x8FDB;&#x7A0B;(SystemServer)&#x548C;&#x5E94;&#x7528;&#x8FDB;&#x7A0B;&#x4E4B;&#x95F4;&#x7684;&#x901A;&#x8BAF;&#x3002;
+   <center><img src="https://raw.githubusercontent.com/brycegao/open-resource/master/startactivity/&#x542F;&#x52A8;Activity.jpg" width="700" hegiht="400" align="center"></center></p>
+<center>Android9&#x65F6;&#x5E8F;&#x56FE;</center>
+
+<p>Android9.0&#x7248;&#x672C;startActivity&#x540E;&#x4F1A;&#x5728;clientTransaction.addCallback&#x51FD;&#x6570;&#x4F20;&#x5165;LaunchActivityItem&#x5BF9;&#x8C61;&#x3002;</p>
+<pre><code>final boolean realStartActivityLocked(ActivityRecord r, ProcessRecord app,
+            boolean andResume, boolean checkConfig) throws RemoteException {
+        }   
+
+ ......
+clientTransaction = ClientTransaction.obtain(app.thread,
+                        r.appToken);
+                clientTransaction.addCallback(LaunchActivityItem.obtain(new Intent(r.intent),
+                        System.identityHashCode(r), r.info,
+                        // TODO: Have this take the merged configuration instead of separate global
+                        // and override configs.
+                        mergedConfiguration.getGlobalConfiguration(),
+                        mergedConfiguration.getOverrideConfiguration(), r.compat,
+                        r.launchedFromPackage, task.voiceInteractor, app.repProcState, r.icicle,
+                        r.persistentState, results, newIntents, mService.isNextTransitionForward(),
+                        profilerInfo));
+   ....
+}
+</code></pre><p>Android9.0&#x4EE5;&#x524D;&#x7248;&#x672C;&#x76F4;&#x63A5;&#x8C03;&#x7528;ActivityThread&#x7684;scheduleLaunchActivity&#x65B9;&#x6CD5;&#x53D1;&#x9001;LAUNCH_ACTIVITY&#x6D88;&#x606F;&#x3002;</p>
+<pre><code>final boolean realStartActivityLocked(ActivityRecord r, ProcessRecord app,
+           boolean andResume, boolean checkConfig) throws RemoteException {
+
+       ......
+
+        app.thread.scheduleLaunchActivity(new Intent(r.intent), r.appToken,
+                   System.identityHashCode(r), r.info,
+                   // TODO: Have this take the merged configuration instead of separate global and
+                   // override configs.
+                   mergedConfiguration.getGlobalConfiguration(),
+                    mergedConfiguration.getOverrideConfiguration(), r.compat,
+                    r.launchedFromPackage, task.voiceInteractor, app.repProcState, r.icicle,
+                    r.persistentState, results, newIntents, !andResume,
+                    mService.isNextTransitionForward(), profilerInfo);
+
+}
+</code></pre><p><strong>&#x56E0;&#x4E3A;&#x90FD;&#x8C03;&#x7528;&#x4E86;sendMessage&#xFF0C; &#x6240;&#x4EE5;startActivity&#x662F;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#xFF1B;</strong></p>
+<p>Android9.0&#x4EE5;&#x524D;&#x7248;&#x672C;&#x5728;&#x6267;&#x884C;&#x4E86;startActivity&#x540E;&#x4F1A;&#x5411;&#x4E3B;&#x7EBF;&#x7A0B;MessageQueue&#x4E2D;&#x65B0;&#x589E;&#x4E00;&#x4E2A;Message&#xFF0C; &#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;
+ <center><img src="https://raw.githubusercontent.com/brycegao/open-resource/master/startactivity/android9.0&#x4EE5;&#x524D;.png" width="700" hegiht="400" align="center"></center></p>
+<center>android8.0 startActivity</center>
+
+<p>Android9.0&#x53CA;&#x540E;&#x7EED;&#x7248;&#x672C;AndroidQ&#x65B0;&#x589E;what&#x7B49;&#x4E8E;159&#x5373;EXECUTE_TRANSACTION&#x7684;&#x6D88;&#x606F;&#xFF0C; &#x4E14;obj&#x662F;ClientTransaction&#x7C7B;&#x5BF9;&#x8C61;&#x3002;
+ <center><img src="https://raw.githubusercontent.com/brycegao/open-resource/master/startactivity/android9.0&#x4EE5;&#x540E;.png" width="700" hegiht="400" align="center"></center></p>
+<center>android9.0 startActivity</center>
+
+
+<p>&#x56E0;&#x4E3A;Android&#x6D88;&#x606F;&#x662F;&#x4E2A;&#x961F;&#x5217;&#xFF0C; &#x5F53;&#x542F;&#x52A8;Activity&#x65F6;&#x4F1A;&#x5411;&#x961F;&#x5217;&#x5C3E;&#x90E8;&#x65B0;&#x589E;&#x4E00;&#x6761;Message&#xFF0C; &#x5982;&#x679C;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E2D;&#x6709;&#x8017;&#x65F6;&#x64CD;&#x4F5C;&#x7684;Message&#x4F1A;&#x5BFC;&#x81F4;&#x542F;&#x52A8;Activity&#x65F6;&#x673A;&#x5EF6;&#x540E;
+ <center><img src="https://raw.githubusercontent.com/brycegao/open-resource/master/startactivity/&#x79FB;&#x52A8;&#x6D88;&#x606F;.png" width="700" hegiht="400" align="center"></center></p>
+<center>&#x8C03;&#x6574;Message&#x4F4D;&#x7F6E;</center>
+
+
+<p>&#x5B89;&#x5353;Looper&#x4F1A;&#x5FAA;&#x73AF;&#x6D88;&#x8D39;MessageQueue&#x4E2D;&#x7684;Message&#xFF08;&#x6CE8;&#x610F;&#xFF1A;&#x5E76;&#x4E0D;&#x662F;&#x771F;&#x6B63;&#x7684;&#x5148;&#x5165;&#x5148;&#x51FA;&#xFF0C;&#x539F;&#x56E0;&#x662F;&#x5F02;&#x6B65;&#x6D88;&#x606F;&#x53EF;&#x4EE5;&#x63D2;&#x961F;&#xFF09;&#xFF0C; &#x60F3;&#x8BA9;&#x67D0;&#x4E2A;Message&#x63D0;&#x524D;&#x6267;&#x884C;&#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x8C03;&#x6574;&#x5B83;&#x5728;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</p>
+<center><img src="https://raw.githubusercontent.com/brycegao/open-resource/master/startactivity/&#x6D88;&#x606F;&#x5FAA;&#x73AF;.png" width="700" hegiht="400" align="center"></center>
+<center>Looper&#x5DE5;&#x4F5C;&#x539F;&#x7406;</center>
+
+<p>&#x7531;&#x4E8E;Linux&#x7684;epoll&#x673A;&#x5236;&#xFF0C; &#x4FDD;&#x8BC1;&#x4E86;Looper.loop&#x7684;&#x6B7B;&#x5FAA;&#x73AF;&#x83B7;&#x53D6;&#x6D88;&#x606F;&#x65F6;&#x5E76;&#x4E0D;&#x4F1A;&#x963B;&#x585E;&#x4E3B;&#x7EBF;&#x7A0B;&#x3002; &#x5F53;&#x4E3B;&#x7EBF;&#x7A0B;&#x65E0;&#x6D88;&#x606F;&#x65F6;&#x8FDB;&#x5165;&#x7761;&#x7720;&#x72B6;&#x6001;&#x5E76;&#x963B;&#x585E;&#x7B49;&#x5F85;nativePollOnce&#x51FD;&#x6570;&#xFF0C; &#x6709;&#x6D88;&#x606F;&#x65F6;&#x5524;&#x9192;nativePollOnce&#x51FD;&#x6570;&#x5E76;&#x7EE7;&#x7EED;&#x5411;&#x4E0B;&#x6267;&#x884C;&#x3002;</p>
+<center><img src="https://raw.githubusercontent.com/brycegao/open-resource/master/startactivity/&#x6D88;&#x606F;&#x5904;&#x7406;&#x65B9;&#x5F0F;.png" width="700" hegiht="400" align="center"></center>
+<center>Message&#x6B7B;&#x5FAA;&#x73AF;&#x539F;&#x7406;</center>
+
+<p>&#x542F;&#x52A8;&#x4F18;&#x5316;&#x5EFA;&#x8BAE;&#xFF1A;</p>
+<p>1&#x3001;&#x5982;&#x679C;&#x6D88;&#x606F;&#x961F;&#x91CC;&#x4E2D;&#x6709;&#x8017;&#x65F6;&#x64CD;&#x4F5C;&#x7684;Message&#xFF0C; &#x5EFA;&#x8BAE;&#x8FD0;&#x884C;&#x65F6;&#x4FEE;&#x6539;&#x542F;&#x52A8;Activity&#x5BF9;&#x5E94;Message&#x5728;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C; &#x4ECE;&#x800C;&#x8FBE;&#x5230;&#x63D0;&#x524D;&#x542F;&#x52A8;Activity&#x7684;&#x76EE;&#x7684;&#x3002;</p>
+<p>2&#x3001;App&#x51B7;&#x542F;&#x52A8;&#x6216;&#x542F;&#x52A8;Activity&#x65F6;&#x5C06;&#x4E00;&#x90E8;&#x5206;&#x5FC5;&#x987B;&#x8FD0;&#x884C;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x7684;&#x4EFB;&#x52A1;&#x8C03;&#x6574;&#x5230;IdleHandler&#x4E2D;&#x3002;</p>
+<p>&#x8C03;&#x6574;&#x542F;&#x52A8;Activity&#x5BF9;&#x5E94;Message&#x65F6;&#x5E8F;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code>
+public class MainActivity extends AppCompatActivity {
+    private TextView mTvInfo;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        mTvInfo = findViewById(R.id.tv_info);
+
+        findViewById(R.id.btn_ok).setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+              //new Handler().post(new Runnable() {
+              //  @Override public void run() {
+              //    try {
+              //      Thread.sleep(200);
+              //    } catch (InterruptedException ex) {
+              //      ex.printStackTrace();
+              //    }
+              //  }
+              //});
+                Log.d(&quot;brycegao&quot;, &quot;------------------queue111111111&quot;);
+
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(intent);
+                MessageQueue queue = Looper.myQueue();
+                changeMsgSequence(queue);
+                Log.d(&quot;brycegao&quot;, &quot;------------------queue22222222&quot;);
+            }
+        });
+    }
+
+    private void changeMsgSequence(MessageQueue queue) {
+      Class clz = MessageQueue.class;
+      try {
+        Field field = clz.getDeclaredField(&quot;mMessages&quot;);
+        field.setAccessible(true);
+        Object obj = field.get(queue);
+        if (obj != null &amp;&amp; obj instanceof Message) {
+          Message msg = (Message) obj;
+          Message newHead; //&#x65B0;&#x7684;mMessage&#x503C;
+          if (Build.VERSION.SDK_INT &lt; Build.VERSION_CODES.P) {
+            newHead = alterMsgOrderBeforeAndroidP(msg);
+          } else {
+            //Android9&#x53CA;&#x4EE5;&#x4E0A;&#x7248;&#x672C;
+            newHead = alterMsgOrderAfterAndroidP(msg);
+          }
+          field.set(queue, newHead);
+        }
+      } catch (Exception ex) {
+        ex.printStackTrace();
+      }
+
+    }
+
+    private Message getNextMessage(Message msg) {
+        Class clz = Message.class;
+        try {
+            Field field = clz.getDeclaredField(&quot;next&quot;);
+            field.setAccessible(true);
+            Object object = field.get(msg);
+            if (object != null &amp;&amp; object instanceof Message) {
+                return (Message) object;
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * &#x8BBE;&#x7F6E;&#x5F53;&#x524D;Message&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x4E3A;next
+     * @param cur
+     * @param next
+     */
+    private void setNextMessage(Message cur, Message next) {
+        Class clz = Message.class;
+        try {
+            Field field = clz.getDeclaredField(&quot;next&quot;);
+            field.setAccessible(true);
+            field.set(cur, next);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    /**
+     * Android9&#x53CA;&#x540E;&#x7EED;&#x7248;&#x672C;Q&#x79FB;&#x52A8;activity&#x542F;&#x52A8;&#x6D88;&#x606F;&#x5230;&#x961F;&#x5217;&#x5934;&#x90E8;
+     * @param msg&#xFF0C; &#x4E3B;&#x7EBF;&#x7A0B;MessageQueue&#x7684;mMessages
+     * @return
+    */
+    private Message alterMsgOrderAfterAndroidP(final Message msg) {
+      Message head = msg;
+      Message destMsg = msg;
+      Message last = msg;
+
+      while (head != null) {
+        if (head.what == 159 &amp;&amp; head.getTarget() != null
+            &amp;&amp; head.getTarget().getClass().toString().contains(&quot;android.app.ActivityThread$H&quot;)
+            &amp;&amp; isObjLaunchActivityItem(head.obj)) {
+          Message nextMsg = getNextMessage(head);
+          setNextMessage(last, nextMsg);
+          setNextMessage(head, msg);
+          return head;
+        }
+        last = head;
+        head = getNextMessage(head);
+      }
+      return destMsg;
+    }
+
+  /**
+   * &#x5224;&#x65AD;Message&#x7684;obj&#x53C2;&#x6570;&#x662F;&#x5426;&#x5339;&#x914D;&#x542F;&#x52A8;Activity
+   * @param object, Message&#x7684;obj&#x53C2;&#x6570;
+   * @return
+   */
+    private boolean isObjLaunchActivityItem(Object object) {
+      if (object == null || !object.getClass().toString()
+          .contains(&quot;android.app.servertransaction.ClientTransaction&quot;)) {
+        return false;
+      }
+
+      try {
+        Class clz = Class.forName(&quot;android.app.servertransaction.ClientTransaction&quot;);
+        Field field = clz.getDeclaredField(&quot;mActivityCallbacks&quot;);
+        field.setAccessible(true);
+        Object data = field.get(object);
+        if (data != null &amp;&amp; data instanceof List) {
+          List items = (List)data;
+          if (items.size() &gt; 0) {
+            Object tranItem = items.get(0);
+            if (tranItem.getClass().toString().endsWith(&quot;LaunchActivityItem&quot;)) {
+               return true;
+            }
+          }
+        }
+      } catch (Exception ex) {
+        ex.printStackTrace();
+      }
+      return false;
+    }
+
+    private Message alterMsgOrderBeforeAndroidP(final Message msg) {
+        Message head = msg;
+        Message destMsg = msg;   //&#x65B0;&#x7684;&#x961F;&#x5217;&#x5934;&#xFF0C;&#x5373;&#x542F;&#x52A8;activity&#x6D88;&#x606F;
+        Message last = msg;
+
+        while (head != null) {
+            if (head.what == 100 &amp;&amp; head.getTarget() != null
+                &amp;&amp; head.getTarget().getClass().toString().contains(&quot;android.app.ActivityThread$H&quot;)) {
+                //&#x5224;&#x65AD;&#x662F;&#x542F;&#x52A8;activity&#x7684;&#x6D88;&#x606F;
+                //{ when=-1m0s908ms what=100 obj=ActivityRecord{672a27c token=android.os.BinderProxy@4392705 {com.brycegao.findview/com.brycegao.findview.SecondActivity}} target=android.app.ActivityThread$H }
+                Message nextMsg = getNextMessage(head);
+                setNextMessage(last, nextMsg);
+                setNextMessage(head, msg);
+                return head;
+            }
+
+            last = head;
+            head = getNextMessage(head);
+        }
+
+        return destMsg;
+    }
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Lint解决线上问题.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Lint解决线上问题">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Android9启动Activity流程","level":"1.2.8","depth":2,"next":{"title":"章节2","level":"1.3","depth":1,"ref":"","articles":[{"title":"Chapter","level":"1.3.1","depth":2,"path":"Chapter2/1.md","ref":"Chapter2/1.md","articles":[]},{"title":"测试标题","level":"1.3.2","depth":2,"path":"Chapter2/2.md","ref":"Chapter2/2.md","articles":[]}]},"previous":{"title":"Lint解决线上问题","level":"1.2.7","depth":2,"path":"Chapter1/Lint解决线上问题.md","ref":"Chapter1/Lint解决线上问题.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","anchors","expandable-chapters","github","github-buttons","sharing-plus","anchor-navigation-ex","favicon","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":""},"livereload":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{},"github-buttons":{"buttons":[{"user":"Blankj","repo":"glory","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{}},"theme":"default","author":"brycegao","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","links":{"sidebar":{"技术沉淀":"http://git.lianjia.com/luweiyu001/lion/wikis"}},"gitbook":"3.2.3","description":"show me the code"},"file":{"path":"Chapter1/安卓9启动Activity流程分析和优化建议.md","mtime":"2019-12-06T09:15:28.035Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-06T09:23:28.786Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,582 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>精细化曝光策略 · 技术博客</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="brycegao">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="贝壳找房解决全局悬浮窗问题.html" />
+    
+    
+    <link rel="prev" href="解决安卓贝壳找房APP首页滑动卡顿问题.html" />
+    
+
+    
+    
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Blankj","repo":"glory","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://git.lianjia.com/luweiyu001/lion/wikis" target="_blank" class="custom-link">技术沉淀</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    基础知识
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="HashMap源码分析.html">
+            
+                <a href="HashMap源码分析.html">
+            
+                    
+                    HashMap源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="解决安卓贝壳找房APP首页滑动卡顿问题.html">
+            
+                <a href="解决安卓贝壳找房APP首页滑动卡顿问题.html">
+            
+                    
+                    安卓卡顿原因分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3" data-path="精细化曝光策略.html">
+            
+                <a href="精细化曝光策略.html">
+            
+                    
+                    精细化曝光策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="贝壳找房解决全局悬浮窗问题.html">
+            
+                <a href="贝壳找房解决全局悬浮窗问题.html">
+            
+                    
+                    贝壳找房解决全局悬浮窗问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="自定义android gradle插件.html">
+            
+                <a href="自定义android gradle插件.html">
+            
+                    
+                    自定义gradle插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="贝壳找房适配动态权限.html">
+            
+                <a href="贝壳找房适配动态权限.html">
+            
+                    
+                    贝壳找房适配动态权限
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="Lint解决线上问题.html">
+            
+                <a href="Lint解决线上问题.html">
+            
+                    
+                    Lint解决线上问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="安卓9启动Activity流程分析和优化建议.html">
+            
+                <a href="安卓9启动Activity流程分析和优化建议.html">
+            
+                    
+                    Android9启动Activity流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    章节2
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Chapter2/1.html">
+            
+                <a href="../Chapter2/1.html">
+            
+                    
+                    Chapter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Chapter2/2.html">
+            
+                <a href="../Chapter2/2.html">
+            
+                    
+                    测试标题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >精细化曝光策略</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x7CBE;&#x7EC6;&#x5316;&#x66DD;&#x5149;&#x7B56;&#x7565;"><b></b>&#x7CBE;&#x7EC6;&#x5316;&#x66DD;&#x5149;&#x7B56;&#x7565;</a></li><ul><ul><li><span class="title-icon "></span><a href="#&#x4E00;&#x3001;&#x80CC;&#x666F;"><b></b>&#x4E00;&#x3001;&#x80CC;&#x666F;</a></li><li><span class="title-icon "></span><a href="#&#x4E8C;&#x3001;&#x89E3;&#x51B3;&#x65B9;&#x6848;"><b></b>&#x4E8C;&#x3001;&#x89E3;&#x51B3;&#x65B9;&#x6848;</a></li><li><span class="title-icon "></span><a href="#&#x4E09;&#x3001;&#x53C2;&#x8003;&#x4EE3;&#x7801;"><b></b>&#x4E09;&#x3001;&#x53C2;&#x8003;&#x4EE3;&#x7801;</a></li><li><span class="title-icon "></span><a href="#&#x56DB;&#x3001;&#x5C55;&#x671B;"><b></b>&#x56DB;&#x3001;&#x5C55;&#x671B;</a></li></ul></ul></ul></div><a href="#&#x7CBE;&#x7EC6;&#x5316;&#x66DD;&#x5149;&#x7B56;&#x7565;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x7CBE;&#x7EC6;&#x5316;&#x66DD;&#x5149;&#x7B56;&#x7565;"><a name="&#x7CBE;&#x7EC6;&#x5316;&#x66DD;&#x5149;&#x7B56;&#x7565;" class="anchor-navigation-ex-anchor" href="#&#x7CBE;&#x7EC6;&#x5316;&#x66DD;&#x5149;&#x7B56;&#x7565;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x7CBE;&#x7EC6;&#x5316;&#x66DD;&#x5149;&#x7B56;&#x7565;" class="plugin-anchor" href="#&#x7CBE;&#x7EC6;&#x5316;&#x66DD;&#x5149;&#x7B56;&#x7565;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7CBE;&#x7EC6;&#x5316;&#x66DD;&#x5149;&#x7B56;&#x7565;</h1>
+<blockquote>
+<p>&#x9AD8;&#x745E; &#x5927;&#x524D;&#x7AEF;&#x7814;&#x53D1;&#x90E8;&#xFF0C;&#x90AE;&#x7BB1;&#xFF1A;gaorui006@ke.com&#xFF0C;&#x7535;&#x8BDD;&#xFF1A;13718691711; 2018&#x5E74;5&#x6708;&#x52A0;&#x5165;&#x8D1D;&#x58F3;&#x627E;&#x623F;&#xFF0C;&#x4EFB;&#x804C;Android&#x5DE5;&#x7A0B;&#x5E08;&#xFF0C;&#x76EE;&#x524D;&#x8D1F;&#x8D23;&#x8D1D;&#x58F3;&#x627E;&#x623F;app&#x5B89;&#x5353;&#x7AEF;&#x7814;&#x53D1;&#x5DE5;&#x4F5C;&#x3002;</p>
+<p>&#x8D3A;&#x5B87;&#x6210; &#x5927;&#x524D;&#x7AEF;&#x7814;&#x53D1;&#x90E8;&#xFF0C;&#x90AE;&#x7BB1;&#xFF1A;heyucheng001@ke.com; 2018&#x5E74;6&#x6708;&#x52A0;&#x5165;&#x8D1D;&#x58F3;&#x627E;&#x623F;&#xFF0C;&#x4EFB;&#x804C;Android&#x5DE5;&#x7A0B;&#x5E08;&#xFF0C;&#x76EE;&#x524D;&#x8D1F;&#x8D23;&#x8D1D;&#x58F3;&#x627E;&#x623F;app&#x5B89;&#x5353;&#x7AEF;&#x7814;&#x53D1;&#x5DE5;&#x4F5C;&#x3002;</p>
+<p>&#x6458;&#x8981;&#xFF1A;&#x76EE;&#x524D;&#x8D1D;&#x58F3;&#x627E;&#x623F;&#x7684;&#x66DD;&#x5149;&#x7B56;&#x7565;&#x8FB9;&#x754C;&#x6761;&#x4EF6;&#x6BD4;&#x8F83;&#x5355;&#x4E00;&#xFF0C; &#x90FD;&#x662F;APP&#x7AEF;&#x5199;&#x6B7B;&#x7684;&#x903B;&#x8F91;&#xFF1B;&#x5BF9;&#x6807;&#x4E00;&#x7EBF;&#x516C;&#x53F8;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C; &#x662F;&#x7531;API&#x4E0B;&#x53D1;&#x6BCF;&#x79CD;&#x5361;&#x7247;/Feed&#x7684;&#x95E8;&#x9650;&#x6761;&#x4EF6;&#xFF0C; &#x4ECE;&#x800C;&#x5F97;&#x5230;&#x66F4;&#x7CBE;&#x51C6;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+</blockquote>
+<h3 id="&#x4E00;&#x3001;&#x80CC;&#x666F;"><a name="&#x4E00;&#x3001;&#x80CC;&#x666F;" class="anchor-navigation-ex-anchor" href="#&#x4E00;&#x3001;&#x80CC;&#x666F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4E00;&#x3001;&#x80CC;&#x666F;" class="plugin-anchor" href="#&#x4E00;&#x3001;&#x80CC;&#x666F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E00;&#x3001;&#x80CC;&#x666F;</h3>
+<p>   &#x76EE;&#x524D;&#x8D1D;&#x58F3;&#x627E;&#x623F;APP&#x7AEF;&#x7684;&#x66DD;&#x5149;&#x65F6;&#x673A;&#x662F;&#x5199;&#x6B7B;&#x7684;&#xFF0C; &#x89E6;&#x53D1;&#x6761;&#x4EF6;&#xFF1A;&#x5361;&#x7247;&#x5FC5;&#x987B;&#x8981;&#x5B8C;&#x6574;&#x5C55;&#x793A;&#x5728;&#x754C;&#x9762;&#x4E0A;&#xFF1B; &#x5728;&#x5217;&#x8868;&#x754C;&#x9762;&#x4E0A;&#x4E0B;/&#x5DE6;&#x53F3;&#x6ED1;&#x52A8;&#x65F6;&#x5355;&#x6B21;/&#x591A;&#x6B21;&#x66DD;&#x5149;&#x540C;&#x4E00;&#x4E2A;&#x5361;&#x7247;&#x3002;</p>
+<p>  &#x73B0;&#x6709;&#x65B9;&#x6848;&#x7684;&#x4E0D;&#x8DB3;&#xFF1A;<br>  1&#x3001;&#x95E8;&#x9650;&#x6761;&#x4EF6;&#x5E94;&#x6539;&#x4E3A;API&#x4E0B;&#x53D1;&#x7684;&#xFF1B; 2&#x3001;&#x7F3A;&#x5C11;&#x5361;&#x7247;&#x5728;&#x754C;&#x9762;&#x4E0A;&#x663E;&#x793A;&#x7684;&#x65F6;&#x957F;&#xFF1B;</p>
+<p>  &#x53CD;&#x4F8B;&#xFF1A;<br>1&#x3001;&#x6BD4;&#x5982;&#x8BF4;&#x5217;&#x8868;&#x6709;1000&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x5FEB;&#x901F;&#x6ED1;&#x52A8;&#x5217;&#x8868;&#x5230;&#x6700;&#x540E;&#x4E00;&#x6761;&#xFF1B;&#x7528;&#x6237;&#x5E76;&#x6CA1;&#x6709;&#x770B;&#x6E05;&#x4E2D;&#x95F4;&#x7684;900&#x591A;&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x8FD9;&#x65F6;&#x8981;&#x4E0D;&#x8981;&#x4E3A;&#x8FD9;&#x4E9B;&#x8BB0;&#x5F55;&#x505A;&#x66DD;&#x5149;&#x57CB;&#x70B9;&#xFF1F;<br>2&#x3001;&#x4F8B;&#x5982;&#x4E00;&#x4E2A;&#x5361;&#x7247;&#x9AD8;&#x5EA6;&#x4E3A;100px&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x53EA;&#x663E;&#x793A;&#x4E86;80px&#xFF0C;&#x662F;&#x5426;&#x8981;&#x505A;&#x4E00;&#x6B21;&#x66DD;&#x5149;&#x57CB;&#x70B9;&#x3002;</p>
+<center><img src="https://raw.githubusercontent.com/brycegao/open-resource/master/QQ123.png" width="200" hegiht="300" align="center"></center>
+<center>&#x5F53;&#x524D;&#x95EE;&#x9898;&#xFF1A;&#x5982;&#x679C;&#x53EA;&#x6ED1;&#x52A8;&#x8FD9;&#x4E2A;&#x7A0B;&#x5EA6;&#xFF0C;&#x76EE;&#x524D;app&#x4E0D;&#x4F1A;&#x4E3A;&#x201C;&#x9644;&#x8FD1;&#x5730;&#x56FE;&#x201D;&#x505A;&#x66DD;&#x5149;&#x57CB;&#x70B9;&#xFF0C;&#x4F46;&#x8BE5;&#x5361;&#x7247;&#x7684;&#x4E3B;&#x8981;&#x4FE1;&#x606F;&#x90FD;&#x5DF2;&#x7ECF;&#x5C55;&#x793A;&#x4E86;</center>
+
+<p>&#x884C;&#x4E1A;&#x5BF9;&#x6807;&#xFF1A;
+    &#x4ECA;&#x65E5;&#x5934;&#x6761;&#x3001;&#x624B;&#x673A;&#x767E;&#x5EA6;&#x7684;&#x66DD;&#x5149;&#x57CB;&#x70B9;&#x7B56;&#x7565;&#x505A;&#x7684;&#x5F88;&#x7EC6;&#xFF0C; &#x6BD4;&#x5982;&#x5361;&#x7247;&#x5212;&#x5165;&#x3001;&#x5212;&#x51FA;&#x65F6;&#x95F4;&#xFF0C;&#x5361;&#x7247;&#x663E;&#x793A;&#x591A;&#x5C11;&#x6BD4;&#x4F8B;&#x53EF;&#x4EE5;&#x7B97;&#x66DD;&#x5149;&#x7B49;&#x7B49;&#x3002;</p>
+<h3 id="&#x4E8C;&#x3001;&#x89E3;&#x51B3;&#x65B9;&#x6848;"><a name="&#x4E8C;&#x3001;&#x89E3;&#x51B3;&#x65B9;&#x6848;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x3001;&#x89E3;&#x51B3;&#x65B9;&#x6848;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4E8C;&#x3001;&#x89E3;&#x51B3;&#x65B9;&#x6848;" class="plugin-anchor" href="#&#x4E8C;&#x3001;&#x89E3;&#x51B3;&#x65B9;&#x6848;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C;&#x3001;&#x89E3;&#x51B3;&#x65B9;&#x6848;</h3>
+<p> &#x53C2;&#x8003;&#x4ECA;&#x65E5;&#x5934;&#x6761;&#x3001;&#x624B;&#x673A;&#x767E;&#x5EA6;&#x7684;&#x505A;&#x6CD5;&#xFF0C;&#x5B9E;&#x73B0;&#x7C7B;&#x4F3C;&#x7684;&#x66DD;&#x5149;&#x7B56;&#x7565;&#x3002;
+1&#x3001;&#x4E3A;&#x6BCF;&#x79CD;&#x5361;&#x7247;&#x8BBE;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x66DD;&#x5149;&#x7B56;&#x7565;&#xFF1B;<br>2&#x3001;APP&#x6839;&#x636E;API&#x4E0B;&#x53D1;&#x7684;&#x95E8;&#x9650;&#x6761;&#x4EF6;&#x89E6;&#x53D1;&#x57CB;&#x70B9;&#xFF1B;<br>3&#x3001;&#x8BB0;&#x5F55;&#x5361;&#x7247;&#x79FB;&#x5165;&#x3001;&#x79FB;&#x51FA;&#x5C4F;&#x5E55;&#x7684;&#x65F6;&#x95F4;&#xFF0C; &#x7EDF;&#x8BA1;&#x6BCF;&#x4E2A;&#x5361;&#x7247;&#x771F;&#x6B63;&#x663E;&#x793A;&#x7684;&#x65F6;&#x957F;&#xFF1B;
+4&#x3001;&#x754C;&#x9762;&#x9500;&#x6BC1;&#x3001;&#x663E;&#x793A;/&#x9690;&#x85CF;&#x662F;&#x5426;&#x89E6;&#x53D1;&#x66DD;&#x5149;&#x57CB;&#x70B9;&#x3002;&#x4F8B;&#x5982;&#x6309;home&#x952E;&#x65F6;&#x662F;&#x5426;&#x89E6;&#x53D1;&#x66DD;&#x5149;&#x57CB;&#x70B9;&#xFF0C;&#x518D;&#x6B21;&#x8FDB;&#x5165;&#x662F;&#x5426;&#x89E6;&#x53D1;&#x57CB;&#x70B9;&#x3002; &#x8FD9;&#x4E9B;&#x573A;&#x666F;&#x7531;API&#x4E0B;&#x53D1;&#x914D;&#x7F6E;&#x5F00;&#x5173;&#x3002;</p>
+ <center><img src="https://raw.githubusercontent.com/brycegao/open-resource/master/QQ111.png" width="350" hegiht="250" align="center"></center>
+  &#x53CC;&#x5411;&#x961F;&#x5217;&#x7F13;&#x5B58;&#x5F53;&#x524D;RecyclerView&#x663E;&#x793A;&#x7684;&#x6240;&#x6709;ViewHolder&#xFF0C; &#x7528;&#x4E8E;&#x6267;&#x884C;&#x5361;&#x7247;&#x7684;&#x66DD;&#x5149;&#x57CB;&#x70B9;&#x51FD;&#x6570;&#x3002;
+
+ &#x5728;&#x76D1;&#x542C;RecyclerView&#x6ED1;&#x52A8;&#x4E8B;&#x4EF6;&#x65F6;&#x5F97;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x53EF;&#x89C1;&#x4F4D;&#x7F6E;&#x3001;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x53EF;&#x89C1;&#x4F4D;&#x7F6E;&#xFF0C;&#x6839;&#x636E;&#x53C2;&#x6570;&#x5224;&#x65AD;&#x662F;&#x4E0A;&#x6ED1;&#x6216;&#x4E0B;&#x6ED1;&#xFF0C;&#x901A;&#x8FC7;&#x5224;&#x65AD;ViewHolder&#x7684;itemView top&#x3001;bottom&#x53C2;&#x6570;&#x503C;&#x5F97;&#x51FA;&#x521A;&#x521A;&#x79FB;&#x5165;&#x5C4F;&#x5E55;&#x7684;&#x5361;&#x7247;&#x663E;&#x793A;&#x6BD4;&#x4F8B;&#xFF0C; &#x5E76;&#x6839;&#x636E;API&#x4E0B;&#x53D1;&#x7684;&#x95E8;&#x9650;&#x503C;(&#x6700;&#x4F4E;&#x663E;&#x793A;&#x6BD4;&#x4F8B;)&#x8BB0;&#x5F55;&#x5F00;&#x59CB;&#x65F6;&#x95F4;&#xFF0C;&#x5728;&#x5361;&#x7247;&#x5373;&#x5C06;&#x5212;&#x51FA;&#x5C4F;&#x5E55;&#x65F6;(API&#x4E0B;&#x53D1;&#x7684;&#x95E8;&#x9650;&#x503C;)&#x89E6;&#x53D1;&#x66DD;&#x5149;&#x57CB;&#x70B9;&#x3002; &#x4ECE;&#x800C;&#x5F97;&#x51FA;&#x5361;&#x7247;&#x7684;&#x663E;&#x793A;&#x5468;&#x671F;&#x3002;  
+ <center><img src="https://raw.githubusercontent.com/brycegao/open-resource/master/QQ333.png" width="350" hegiht="250" align="center"></center> 
+
+<h3 id="&#x4E09;&#x3001;&#x53C2;&#x8003;&#x4EE3;&#x7801;"><a name="&#x4E09;&#x3001;&#x53C2;&#x8003;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x53C2;&#x8003;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4E09;&#x3001;&#x53C2;&#x8003;&#x4EE3;&#x7801;" class="plugin-anchor" href="#&#x4E09;&#x3001;&#x53C2;&#x8003;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x53C2;&#x8003;&#x4EE3;&#x7801;</h3>
+<p>&#x6ED1;&#x52A8;&#x56DE;&#x8C03;  </p>
+<pre><code>public class CardExposureHelper extends RecyclerView.OnScrollListener {
+ //&#x7F13;&#x5B58;&#x5361;&#x7247;&#x7684;&#x53CC;&#x5411;&#x961F;&#x5217;
+  private Deque&lt;BaseHomeCard&gt; deque;
+  //&#x961F;&#x5217;&#x9876;&#x90E8;Card&#x7684;position
+  private int preFirstExposure;
+  //&#x961F;&#x5217;&#x5E95;&#x90E8;Card&#x7684;position
+  private int preLastExposure;
+  /**
+   * &#x5904;&#x7406;&#x5782;&#x76F4;&#x65B9;&#x5411;&#x5361;&#x7247;&#x66DD;&#x5149;
+   * @param manager
+   * @param isUp &#x662F;&#x5426;&#x5411;&#x4E0A;&#x6ED1;&#x52A8;
+   */
+  private void onVerticalExposure(LinearLayoutManager manager,boolean isUp) {
+    int firstVisiblePosition = manager.findFirstVisibleItemPosition();
+    int lastVisiblePosition = manager.findLastVisibleItemPosition();
+    //&#x6839;&#x636E;&#x66DD;&#x5149;&#x6BD4;&#x4F8B;&#x5224;&#x65AD;&#x7B2C;&#x4E00;&#x4E2A;&#x53EF;&#x89C1;&#x5361;&#x7247;&#x662F;&#x5426;&#x9700;&#x8981;&#x66DD;&#x5149;
+    firstVisiblePosition = isVerticalExposure(firstVisiblePosition)?firstVisiblePosition:firstVisiblePosition+1;
+    //&#x6839;&#x636E;&#x66DD;&#x5149;&#x6BD4;&#x4F8B;&#x5224;&#x65AD;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x53EF;&#x89C1;&#x5361;&#x7247;&#x662F;&#x5426;&#x9700;&#x8981;&#x66DD;&#x5149;
+    lastVisiblePosition = isVerticalExposure(lastVisiblePosition)?lastVisiblePosition:lastVisiblePosition-1;
+    //&#x7B2C;&#x4E00;&#x6B21;&#x66DD;&#x5149;&#xFF0C;&#x66DD;&#x5149;&#x6240;&#x6709;&#x7B26;&#x5408;&#x66DD;&#x5149;&#x6BD4;&#x4F8B;&#x7684;Card
+    if (preFirstExposure==0&amp;&amp;preLastExposure==0){
+      offerVerticalVisibleQueue(firstVisiblePosition,lastVisiblePosition,true);
+    }else if (isUp){
+      //&#x5411;&#x4E0A;&#x6ED1;&#x52A8;&#xFF0C;&#x628A;&#x9876;&#x90E8;&#x4E0D;&#x53EF;&#x89C1;Card&#x4ECE;&#x9876;&#x90E8;&#x51FA;&#x961F;&#xFF0C;&#x5E95;&#x90E8;&#x8FDB;&#x5165;&#x53EF;&#x66DD;&#x5149;&#x7684;&#x5361;&#x7247;&#x5165;&#x961F;
+      popVerticalVisibleQueue(preFirstExposure,firstVisiblePosition-1,true);
+      offerVerticalVisibleQueue(preLastExposure+1,lastVisiblePosition,false);
+    }else {
+      //&#x5BF9;&#x5E94;&#x5411;&#x4E0B;&#x6ED1;&#x52A8;&#x7684;&#x7B56;&#x7565;
+      popVerticalVisibleQueue(lastVisiblePosition+1,preLastExposure,false);
+      offerVerticalVisibleQueue(firstVisiblePosition,preFirstExposure-1,true);
+    }
+    //&#x66F4;&#x65B0;&#x961F;&#x5217;&#x7684;&#x9876;&#x90E8;position&#x548C;&#x5E95;&#x90E8;position
+    preFirstExposure = firstVisiblePosition;
+    preLastExposure = lastVisiblePosition;
+  }  
+  /**
+   * &#x5165;&#x961F;&#x64CD;&#x4F5C;
+   * @param start
+   * @param end
+   * @param isFirst &#x662F;&#x5426;&#x4ECE;&#x9876;&#x90E8;&#x5165;&#x961F;
+   */
+  private void offerVerticalVisibleQueue(int start,int end,boolean isFirst){
+    if (start&gt;=0 &amp;&amp; end&lt;recyclerView.getAdapter().getItemCount() &amp;&amp; start&lt;=end){
+      if (isFirst){
+        for (int i=end;i&gt;=start;i--){
+          onVerticalItemSlideInto(i,true);
+        }
+      }else {
+        for (int i=start;i&lt;=end;i++){
+          onVerticalItemSlideInto(i,false);
+        }
+      }
+    }
+  } 
+  /**
+   * &#x51FA;&#x961F;&#x64CD;&#x4F5C;
+   * @param start
+   * @param end
+   * @param isFirst &#x662F;&#x5426;&#x4ECE;&#x9876;&#x90E8;&#x51FA;&#x961F;
+   */
+  private void popVerticalVisibleQueue(int start,int end,boolean isFirst){
+    if (start&gt;=0 &amp;&amp; end&lt;recyclerView.getAdapter().getItemCount() &amp;&amp; start&lt;=end){
+      if (isFirst){
+        for (int i=start;i&lt;=end;i++){
+          onVerticalItemSlideOut(i,isFirst);
+        }
+      }else {
+        for (int i=end;i&gt;=start;i--){
+          onVerticalItemSlideOut(i,isFirst);
+        }
+      }
+    }
+  }
+   /**
+   * &#x5904;&#x7406;&#x6ED1;&#x5165;&#xFF08;&#x5165;&#x961F;&#xFF09;&#x53EF;&#x66DD;&#x5149;&#x7684;&#x5361;&#x7247;
+   * @param position
+   * @param isFirst &#x662F;&#x5426;&#x4ECE;&#x9876;&#x90E8;&#x6ED1;&#x5165;&#xFF08;&#x5165;&#x961F;&#xFF09;
+   */
+  private void onVerticalItemSlideInto(int position,boolean isFirst){
+    BaseHomeCard card = getBaseHomeCard(position);
+    if (isFirst){
+      deque.offerFirst(card);
+    }else {
+      deque.offerLast(card);
+    }
+    //&#x56DE;&#x8C03;&#x5361;&#x7247;&#x5F00;&#x59CB;&#x66DD;&#x5149;&#x4E8B;&#x4EF6;
+    callItemExposure(card,position);
+  }  
+  /**
+   * &#x5904;&#x7406;&#x6ED1;&#x51FA;&#xFF08;&#x51FA;&#x961F;&#xFF09;&#x505C;&#x6B62;&#x66DD;&#x5149;&#x7684;&#x5361;&#x7247;
+   * @param position
+   * @param isFirst &#x662F;&#x5426;&#x4ECE;&#x9876;&#x90E8;&#x6ED1;&#x51FA;&#xFF08;&#x51FA;&#x961F;&#xFF09;
+   */
+  private void onVerticalItemSlideOut(int position,boolean isFirst){
+    BaseHomeCard card;
+    if (isFirst){
+      card = deque.removeFirst();
+    }else {
+      card = deque.removeLast();
+    }
+    //&#x56DE;&#x8C03;&#x5361;&#x7247;&#x7ED3;&#x675F;&#x66DD;&#x5149;&#x4E8B;&#x4EF6;
+    callItemEndExposure(card,position,isFirst);
+  }
+</code></pre><h3 id="&#x56DB;&#x3001;&#x5C55;&#x671B;"><a name="&#x56DB;&#x3001;&#x5C55;&#x671B;" class="anchor-navigation-ex-anchor" href="#&#x56DB;&#x3001;&#x5C55;&#x671B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x56DB;&#x3001;&#x5C55;&#x671B;" class="plugin-anchor" href="#&#x56DB;&#x3001;&#x5C55;&#x671B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DB;&#x3001;&#x5C55;&#x671B;</h3>
+<p>  &#x76EE;&#x524D;&#x8FD9;&#x662F;APP&#x7AEF;&#x505A;&#x7684;&#x6280;&#x672F;&#x50A8;&#x5907;&#xFF0C; &#x5982;&#x9700;&#x4E0A;&#x7EBF;&#x4ECD;&#x9700;&#x8981;&#x4EA7;&#x54C1;&#x7ECF;&#x7406;&#x505A;&#x66F4;&#x7EC6;&#x81F4;&#x7684;&#x4EA7;&#x54C1;&#x89C4;&#x5212;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="解决安卓贝壳找房APP首页滑动卡顿问题.html" class="navigation navigation-prev " aria-label="Previous page: 安卓卡顿原因分析">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="贝壳找房解决全局悬浮窗问题.html" class="navigation navigation-next " aria-label="Next page: 贝壳找房解决全局悬浮窗问题">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"精细化曝光策略","level":"1.2.3","depth":2,"next":{"title":"贝壳找房解决全局悬浮窗问题","level":"1.2.4","depth":2,"path":"Chapter1/贝壳找房解决全局悬浮窗问题.md","ref":"Chapter1/贝壳找房解决全局悬浮窗问题.md","articles":[]},"previous":{"title":"安卓卡顿原因分析","level":"1.2.2","depth":2,"path":"Chapter1/解决安卓贝壳找房APP首页滑动卡顿问题.md","ref":"Chapter1/解决安卓贝壳找房APP首页滑动卡顿问题.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","anchors","expandable-chapters","github","github-buttons","sharing-plus","anchor-navigation-ex","favicon","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":""},"livereload":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{},"github-buttons":{"buttons":[{"user":"Blankj","repo":"glory","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{}},"theme":"default","author":"brycegao","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","links":{"sidebar":{"技术沉淀":"http://git.lianjia.com/luweiyu001/lion/wikis"}},"gitbook":"3.2.3","description":"show me the code"},"file":{"path":"Chapter1/精细化曝光策略.md","mtime":"2018-08-01T08:25:01.820Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-06T09:23:28.786Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

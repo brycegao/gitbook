@@ -1,0 +1,642 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>HashMap源码分析 · 技术博客</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="brycegao">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="解决安卓贝壳找房APP首页滑动卡顿问题.html" />
+    
+    
+
+    
+    
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Blankj","repo":"glory","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://git.lianjia.com/luweiyu001/lion/wikis" target="_blank" class="custom-link">技术沉淀</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    基础知识
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="HashMap源码分析.html">
+            
+                <a href="HashMap源码分析.html">
+            
+                    
+                    HashMap源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="解决安卓贝壳找房APP首页滑动卡顿问题.html">
+            
+                <a href="解决安卓贝壳找房APP首页滑动卡顿问题.html">
+            
+                    
+                    安卓卡顿原因分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="精细化曝光策略.html">
+            
+                <a href="精细化曝光策略.html">
+            
+                    
+                    精细化曝光策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="贝壳找房解决全局悬浮窗问题.html">
+            
+                <a href="贝壳找房解决全局悬浮窗问题.html">
+            
+                    
+                    贝壳找房解决全局悬浮窗问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="自定义android gradle插件.html">
+            
+                <a href="自定义android gradle插件.html">
+            
+                    
+                    自定义gradle插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="贝壳找房适配动态权限.html">
+            
+                <a href="贝壳找房适配动态权限.html">
+            
+                    
+                    贝壳找房适配动态权限
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="Lint解决线上问题.html">
+            
+                <a href="Lint解决线上问题.html">
+            
+                    
+                    Lint解决线上问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="安卓9启动Activity流程分析和优化建议.html">
+            
+                <a href="安卓9启动Activity流程分析和优化建议.html">
+            
+                    
+                    Android9启动Activity流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    章节2
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Chapter2/1.html">
+            
+                <a href="../Chapter2/1.html">
+            
+                    
+                    Chapter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Chapter2/2.html">
+            
+                <a href="../Chapter2/2.html">
+            
+                    
+                    测试标题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >HashMap源码分析</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#hashmap&#x6E90;&#x7801;&#x5206;&#x6790;&#xFF08;jdk18&#xFF09;"><b></b>HashMap&#x6E90;&#x7801;&#x5206;&#x6790;&#xFF08;JDK1.8&#xFF09;</a></li></ul></div><a href="#hashmap&#x6E90;&#x7801;&#x5206;&#x6790;&#xFF08;jdk18&#xFF09;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="hashmap&#x6E90;&#x7801;&#x5206;&#x6790;&#xFF08;jdk18&#xFF09;"><a name="hashmap&#x6E90;&#x7801;&#x5206;&#x6790;&#xFF08;jdk18&#xFF09;" class="anchor-navigation-ex-anchor" href="#hashmap&#x6E90;&#x7801;&#x5206;&#x6790;&#xFF08;jdk18&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="hashmap&#x6E90;&#x7801;&#x5206;&#x6790;&#xFF08;jdk18&#xFF09;" class="plugin-anchor" href="#hashmap&#x6E90;&#x7801;&#x5206;&#x6790;&#xFF08;jdk18&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>HashMap&#x6E90;&#x7801;&#x5206;&#x6790;&#xFF08;JDK1.8&#xFF09;</h1>
+<blockquote>
+<p>&#x9AD8;&#x745E; &#x5927;&#x524D;&#x7AEF;&#x7814;&#x53D1;&#x90E8;&#xFF0C;&#x90AE;&#x7BB1;&#xFF1A;gaorui006@ke.com&#xFF0C;&#x7535;&#x8BDD;&#xFF1A;13718691711; 2018&#x5E74;5&#x6708;&#x52A0;&#x5165;&#x8D1D;&#x58F3;&#x627E;&#x623F;&#xFF0C;&#x4EFB;&#x804C;Android&#x5DE5;&#x7A0B;&#x5E08;&#xFF0C;&#x76EE;&#x524D;&#x8D1F;&#x8D23;&#x8D1D;&#x58F3;&#x627E;&#x623F;app&#x5B89;&#x5353;&#x7AEF;&#x7814;&#x53D1;&#x5DE5;&#x4F5C;&#x3002;</p>
+<p>&#x6458;&#x8981;&#xFF1A;HashMap&#x662F;&#x6BCF;&#x4E2A;Android&#x548C;Java&#x540E;&#x53F0;&#x7A0B;&#x5E8F;&#x5458;&#x7ECF;&#x5E38;&#x7528;&#x5230;&#x7684;&#x7C7B;&#xFF0C; &#x672C;&#x6587;&#x9610;&#x8FF0;&#x4E86;HashMap&#x57FA;&#x672C;&#x539F;&#x7406;&#x548C;&#x82E5;&#x5E72;&#x4E2A;&#x5B9E;&#x73B0;&#x7EC6;&#x8282;&#xFF0C; &#x5E2E;&#x52A9;&#x8BFB;&#x8005;&#x66F4;&#x6DF1;&#x523B;&#x7684;&#x7406;&#x89E3;&#x548C;&#x4F7F;&#x7528;&#x5B83;&#x3002;</p>
+</blockquote>
+<p>HashMap&#x662F;Java&#x548C;Android&#x7A0B;&#x5E8F;&#x5458;&#x7684;&#x57FA;&#x672C;&#x529F;&#xFF0C; JDK1.8&#x5BF9;HashMap&#x8FDB;&#x884C;&#x4E86;&#x4F18;&#x5316;&#xFF0C; &#x4F60;&#x771F;&#x6B63;&#x7406;&#x89E3;&#x5B83;&#x4E86;&#x5417;&#xFF1F; </p>
+<p>&#x8003;&#x8651;&#x5982;&#x4E0B;&#x95EE;&#x9898;&#xFF1A;  </p>
+<p>1&#x3001;&#x54C8;&#x5E0C;&#x57FA;&#x672C;&#x539F;&#x7406;&#xFF1F;&#xFF08;&#x7B54;&#xFF1A;&#x6563;&#x5217;&#x8868;&#x3001;hash&#x78B0;&#x649E;&#x3001;&#x94FE;&#x8868;&#x3001;&#x7EA2;&#x9ED1;&#x6811;&#xFF09;</p>
+<p>2&#x3001;hashmap&#x67E5;&#x8BE2;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF0C; &#x5F71;&#x54CD;&#x56E0;&#x7D20;&#x548C;&#x539F;&#x7406;&#xFF1F; &#xFF08;&#x7B54;&#xFF1A;&#x6700;&#x597D;O&#xFF08;1&#xFF09;&#xFF0C;&#x6700;&#x5DEE;O&#xFF08;n&#xFF09;&#xFF0C; &#x5982;&#x679C;&#x662F;&#x7EA2;&#x9ED1;O&#xFF08;logn&#xFF09;&#xFF09;
+3&#x3001;resize&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x7684;&#xFF0C; &#x8BB0;&#x4F4F;&#x5DF2;&#x7ECF;&#x6CA1;&#x6709;rehash&#x4E86;&#xFF01;&#xFF01;&#xFF01;&#xFF08;&#x7B54;&#xFF1A;&#x62C9;&#x94FE;entry&#x6839;&#x636E;&#x9AD8;&#x4F4D;bit&#x6563;&#x5217;&#x5230;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;i&#x548C;size+i&#x4F4D;&#x7F6E;&#xFF09;</p>
+<p>4&#x3001;&#x4E3A;&#x4EC0;&#x4E48;&#x83B7;&#x53D6;&#x4E0B;&#x6807;&#x65F6;&#x7528;&#x6309;&#x4F4D;&#x4E0E;&amp;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x53D6;&#x6A21;%&#xFF1F; &#xFF08;&#x7B54;&#xFF1A;&#x4E0D;&#x53EA;&#x662F;&amp;&#x901F;&#x5EA6;&#x66F4;&#x5FEB;&#x54E6;&#xFF0C;  &#x6211;&#x89C9;&#x5F97;&#x4F60;&#x80FD;&#x7B54;&#x4E0A;&#x6765;&#x4FBF;&#x771F;&#x6B63;&#x7406;&#x89E3;hashmap&#x4E86;&#xFF09;</p>
+<p>5&#x3001;&#x4EC0;&#x4E48;&#x65F6;&#x673A;&#x6267;&#x884C;resize&#xFF1F;</p>
+<p>&#x7B54;&#xFF1A;hashmap&#x5B9E;&#x4F8B;&#x91CC;&#x7684;&#x5143;&#x7D20;&#x4E2A;&#x6570;&#x5927;&#x4E8E;threshold&#x65F6;&#x6267;&#x884C;resize(&#x5373;&#x6876;&#x6570;&#x91CF;&#x6269;&#x5BB9;&#x4E3A;2&#x500D;&#x5E76;&#x6563;&#x5217;&#x539F;&#x6765;&#x7684;Entry)&#x3002; PS&#xFF1A;threshold=&#x6876;&#x6570;&#x91CF;*&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;</p>
+<pre><code>final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
+               boolean evict) {
+    Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; p; int n, i;
+    if ((tab = table) == null || (n = tab.length) == 0)
+        n = (tab = resize()).length;   //&#x521D;&#x59CB;&#x5316;&#x6876;&#xFF0C;&#x9ED8;&#x8BA4;16&#x4E2A;&#x5143;&#x7D20;
+    if ((p = tab[i = (n - 1) &amp; hash]) == null)   //&#x5982;&#x679C;&#x7B2C;i&#x4E2A;&#x6876;&#x4E3A;&#x7A7A;&#xFF0C;&#x521B;&#x5EFA;Node&#x5B9E;&#x4F8B;
+        tab[i] = newNode(hash, key, value, null);
+    else { //&#x54C8;&#x5E0C;&#x78B0;&#x649E;&#x7684;&#x60C5;&#x51B5;&#xFF0C; &#x5373;(n-1)&amp;hash&#x76F8;&#x7B49;
+        Node&lt;K,V&gt; e; K k;
+        if (p.hash == hash &amp;&amp;
+            ((k = p.key) == key || (key != null &amp;&amp; key.equals(k))))
+            e = p;   //key&#x76F8;&#x540C;&#xFF0C;&#x540E;&#x9762;&#x4F1A;&#x8986;&#x76D6;value
+        else if (p instanceof TreeNode)
+            e = ((TreeNode&lt;K,V&gt;)p).putTreeVal(this, tab, hash, key, value);  //&#x7EA2;&#x9ED1;&#x6811;&#x6DFB;&#x52A0;&#x5F53;&#x524D;node
+        else {
+            for (int binCount = 0; ; ++binCount) {
+                if ((e = p.next) == null) {
+                    p.next = newNode(hash, key, value, null);  //&#x94FE;&#x8868;&#x6DFB;&#x52A0;&#x5F53;&#x524D;&#x5143;&#x7D20;
+                    if (binCount &gt;= TREEIFY_THRESHOLD - 1) // -1 for 1st
+                        treeifyBin(tab, hash);  //&#x5F53;&#x94FE;&#x8868;&#x4E2A;&#x6570;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;7&#x65F6;&#xFF0C;&#x5C06;&#x94FE;&#x8868;&#x6539;&#x9020;&#x4E3A;&#x7EA2;&#x9ED1;&#x6811;
+                    break;
+                }
+                if (e.hash == hash &amp;&amp;
+                    ((k = e.key) == key || (key != null &amp;&amp; key.equals(k))))
+                    break;
+                p = e;
+            }
+        }
+        if (e != null) { // existing mapping for key
+            V oldValue = e.value;
+            if (!onlyIfAbsent || oldValue == null)
+                e.value = value;
+            afterNodeAccess(e);
+            return oldValue;            //&#x8986;&#x76D6;key&#x76F8;&#x540C;&#x7684;value&#x5E76;return&#xFF0C; &#x5373;&#x4E0D;&#x4F1A;&#x6267;&#x884C;++size
+        }
+    }
+    ++modCount;
+    if (++size &gt; threshold)    //key&#x4E0D;&#x76F8;&#x540C;&#x65F6;&#xFF0C;&#x6BCF;&#x6B21;&#x63D2;&#x5165;&#x4E00;&#x6761;&#x6570;&#x636E;&#x81EA;&#x589E;1. &#x5F53;size&#x5927;&#x4E8E;threshold&#x65F6;resize
+        resize();
+    afterNodeInsertion(evict);
+    return null;
+ }
+</code></pre><p>6&#x3001;&#x4E3A;&#x4EC0;&#x4E48;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#x9ED8;&#x8BA4;&#x4E3A;0.75f &#xFF1F; &#x80FD;&#x4E0D;&#x80FD;&#x53D8;&#x4E3A;0.1&#x3001;0.9&#x3001;2&#x3001;3&#x7B49;&#x7B49;&#x5462;&#xFF1F;</p>
+<p>&#x7B54;&#xFF1A;0.75&#x662F;&#x5E73;&#x8861;&#x4E86;&#x65F6;&#x95F4;&#x548C;&#x7A7A;&#x95F4;&#x7B49;&#x56E0;&#x7D20;&#xFF1B; &#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#x8D8A;&#x5C0F;&#x6876;&#x7684;&#x6570;&#x91CF;&#x8D8A;&#x591A;&#xFF0C;&#x8BFB;&#x5199;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x8D8A;&#x4F4E;&#xFF08;&#x6781;&#x9650;&#x60C5;&#x51B5;O(1), &#x54C8;&#x5E0C;&#x78B0;&#x649E;&#x7684;&#x53EF;&#x80FD;&#x6027;&#x8D8A;&#x5C0F;&#xFF09;&#xFF1B; &#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#x8D8A;&#x5927;&#x6876;&#x7684;&#x6570;&#x91CF;&#x8D8A;&#x5C11;&#xFF0C;&#x8BFB;&#x5199;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x8D8A;&#x9AD8;(&#x6781;&#x9650;&#x60C5;&#x51B5;O(n), &#x54C8;&#x5E0C;&#x78B0;&#x649E;&#x53EF;&#x80FD;&#x6027;&#x8D8A;&#x9AD8;)&#x3002; 0.1&#xFF0C;0.9&#xFF0C;2&#xFF0C;3&#x7B49;&#x90FD;&#x662F;&#x5408;&#x6CD5;&#x503C;&#x3002;</p>
+<p>7&#x3001;&#x5F71;&#x54CD;HashMap&#x6027;&#x80FD;&#x7684;&#x56E0;&#x7D20;&#xFF1F;</p>
+<p>(1) &#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#xFF1B;
+(2) &#x54C8;&#x5E0C;&#x503C;&#xFF1B;&#x7406;&#x60F3;&#x60C5;&#x51B5;&#x662F;&#x5747;&#x5300;&#x7684;&#x6563;&#x5217;&#x5230;&#x5404;&#x4E2A;&#x6876;&#x3002; &#x4E00;&#x822C;HashMap&#x4F7F;&#x7528;String&#x7C7B;&#x578B;&#x4F5C;&#x4E3A;key&#xFF0C;&#x800C;String&#x7C7B;&#x91CD;&#x5199;&#x4E86;hashCode&#x51FD;&#x6570;&#x3002;</p>
+<pre><code>static final int hash(Object key) {
+        int h;
+        return (key == null) ? 0 : (h = key.hashCode()) ^ (h &gt;&gt;&gt; 16);
+}
+</code></pre><p>8&#x3001;HashMap&#x7684;key&#x9700;&#x8981;&#x6EE1;&#x8DB3;&#x4EC0;&#x4E48;&#x6761;&#x4EF6;&#xFF1F; 
+&#x7B54;&#xFF1A;&#x5FC5;&#x987B;&#x91CD;&#x5199;hashCode&#x548C;equals&#x65B9;&#x6CD5;&#xFF0C; &#x5E38;&#x7528;&#x7684;String&#x7C7B;&#x5B9E;&#x73B0;&#x4E86;&#x8FD9;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>9&#x3001;HashMap&#x5141;&#x8BB8;key/value&#x4E3A;null&#xFF0C; &#x4F46;&#x6700;&#x591A;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x3002; &#x4E3A;&#x4EC0;&#x4E48;&#xFF1F;<br>&#x7B54;&#xFF1A; &#x5982;&#x679C;key&#x4E3A;null&#x4F1A;&#x653E;&#x5728;&#x7B2C;&#x4E00;&#x4E2A;&#x6876;&#xFF08;&#x5373;&#x4E0B;&#x6807;0&#xFF09;&#x4F4D;&#x7F6E;&#xFF0C; &#x800C;&#x4E14;&#x662F;&#x5728;&#x94FE;&#x8868;&#x6700;&#x524D;&#x9762;&#xFF08;&#x5373;&#x7B2C;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#xFF09;&#x3002; 
+JDK1.8&#x7684;HashMap&#x6E90;&#x7801;&#xFF1A;<a href="http://www.grepcode.com/file/repository.grepcode.com/java/root/jdk/openjdk/8u40-b25/java/util/HashMap.java#HashMap" target="_blank">http://www.grepcode.com/file/repository.grepcode.com/java/root/jdk/openjdk/8u40-b25/java/util/HashMap.java#HashMap</a></p>
+<p>&#x6211;&#x7684;&#x4E60;&#x60EF;&#x662F;&#x5148;&#x770B;&#x6CE8;&#x91CA;&#x518D;&#x770B;&#x6E90;&#x7801;&#x5E76;&#x8C03;&#x8BD5;&#xFF0C; &#x5148;&#x7FFB;&#x8BD1;&#x4E00;&#x4E0B;&#x6E90;&#x7801;&#x6CE8;&#x91CA;&#x5427;&#xFF0C; &#x4E0D;&#x51C6;&#x4E4B;&#x5904;&#x8BF7;&#x6307;&#x6B63;&#x54C8;&#x3002;</p>
+<p>Hash table based implementation of the Map interface. This implementation provides all of the optional map</p>
+<p><strong>HashTable&#x5B9E;&#x73B0;&#x4E86;Map&#x63A5;&#x53E3;&#x7C7B;&#xFF0C; &#x8FD9;&#x4E9B;&#x63A5;&#x53E3;&#x5B9E;&#x73B0;&#x4E86;&#x6240;&#x6709;&#x53EF;&#x9009;&#x7684;map&#x529F;&#x80FD;&#xFF0C; &#x5305;&#x62EC;&#x5141;&#x8BB8;&#x7A7A;&#x503C;&#x548C;&#x7A7A;key&#x3002;</strong></p>
+<p>operations, and permits null values and thenull key. (TheHashMap class is roughly equivalent toHashtable, except that it is unsynchronized and permits nulls.) This class makes no guarantees as to the order of the map; in particular, it does not guarantee that the order will remain constant over time.</p>
+<p><strong>HashMap&#x548C;HashTable&#x57FA;&#x672C;&#x4E00;&#x81F4;&#xFF0C;  &#x533A;&#x522B;&#x662F;HashMap&#x662F;&#x7EBF;&#x7A0B;&#x4E0D;&#x540C;&#x6B65;&#x7684;&#x4E14;&#x5141;&#x8BB8;&#x7A7A;key&#x3002; HashMap&#x4E0D;&#x4FDD;&#x8BC1;map&#x7684;&#x987A;&#x5E8F;&#xFF0C; &#x800C;&#x4E14;&#x987A;&#x5E8F;&#x662F;&#x53EF;&#x53D8;&#x7684;&#x3002;</strong></p>
+<p>This implementation provides constant-time performance for the basic operations (get andput), assuming the hash function disperses the elements properly among the buckets.</p>
+<p><strong>&#x5982;&#x679C;&#x5C06;&#x6570;&#x636E;&#x9002;&#x5F53;&#x7684;&#x5206;&#x6563;&#x5230;&#x6876;&#x91CC;&#xFF0C; HashMap&#x7684;&#x6DFB;&#x52A0;&#x3001;&#x67E5;&#x8BE2;&#x51FD;&#x6570;&#x7684;&#x6267;&#x884C;&#x5468;&#x671F;&#x662F;&#x5E38;&#x91CF;&#x503C;&#x3002;</strong></p>
+<p>Iteration over collection views requires time proportional to the &quot;capacity&quot; of theHashMap instance (the number of buckets) plus its size (the number of key-value mappings). Thus, it&apos;s very important not to set the initial capacity too high (or the load factor too low) if iteration performance is important.</p>
+<p><strong>&#x4F7F;&#x7528;&#x8FED;&#x4EE3;&#x5668;&#x904D;&#x5386;&#x6240;&#x6709;&#x6570;&#x636E;&#x7684;&#x6027;&#x80FD;&#x8DDF;HashMap&#x7684;&#x6876;&#xFF08;bucket&#xFF09;&#x6570;&#x91CF;&#x6709;&#x76F4;&#x63A5;&#x5173;&#x7CFB;&#xFF0C;   &#x4E3A;&#x4E86;&#x63D0;&#x9AD8;&#x904D;&#x5386;&#x7684;&#x6027;&#x80FD;&#xFF0C; &#x4E0D;&#x80FD;&#x8BBE;&#x7F6E;&#x6BD4;&#x8F83;&#x5927;&#x7684;&#x6876;&#x6570;&#x91CF;&#x6216;&#x8005;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#x8FC7;&#x4F4E;&#x3002;</strong></p>
+<p>An instance of HashMap has two parameters that affect its performance:initial capacity andload factor. Thecapacity is the number of buckets in the hash table, and the initial capacity is simply the capacity at the time the hash table is created.</p>
+<p><strong>HashMap&#x5B9E;&#x4F8B;&#x6709;2&#x4E2A;&#x91CD;&#x8981;&#x53C2;&#x6570;&#x5F71;&#x54CD;&#x5B83;&#x7684;&#x6027;&#x80FD;&#xFF1A; &#x521D;&#x59CB;&#x5BB9;&#x91CF;&#x548C;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#x3002; &#x521D;&#x59CB;&#x5BB9;&#x91CF;&#x662F;&#x6307;&#x5728;&#x54C8;&#x5E0C;&#x8868;&#x91CC;&#x7684;&#x6876;&#x603B;&#x6570;&#xFF0C; &#x4E00;&#x822C;&#x5728;&#x521B;&#x5EFA;HashMap&#x5B9E;&#x4F8B;&#x65F6;&#x8BBE;&#x7F6E;&#x521D;&#x59CB;&#x5BB9;&#x91CF;&#x3002;</strong></p>
+<p>The load factor is a measure of how full the hash table is allowed to get before its capacity is automatically increased.</p>
+<p><strong>&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#x662F;&#x6307;&#x54C8;&#x5E0C;&#x8868;&#x5728;&#x591A;&#x6EE1;&#x65F6;&#x6269;&#x5BB9;&#x7684;&#x767E;&#x5206;&#x6BD4;&#x6BD4;&#x4F8B;&#x3002;</strong></p>
+<p>When the number of entries in the hash table exceeds the product of the load factor and the current capacity, the hash table isrehashed (that is, internal data structures are rebuilt) so that the hash table has approximately twice the number of buckets.</p>
+<p><strong>&#x5F53;&#x54C8;&#x5E0C;&#x8868;&#x7684;&#x6570;&#x636E;&#x4E2A;&#x6570;&#x8D85;&#x8FC7;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#x548C;&#x5F53;&#x524D;&#x5BB9;&#x91CF;&#x7684;&#x4E58;&#x79EF;&#x65F6;&#xFF0C; &#x54C8;&#x5E0C;&#x8868;&#x8981;&#x518D;&#x505A;&#x4E00;&#x6B21;&#x54C8;&#x5E0C;&#xFF08;&#x91CD;&#x5EFA;&#x5185;&#x90E8;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF09;&#xFF0C; &#x54C8;&#x5E0C;&#x8868;&#x6BCF;&#x6B21;&#x6269;&#x5BB9;&#x4E3A;&#x539F;&#x6765;&#x7684;2&#x500D;&#x3002;</strong></p>
+<p>As a general rule, the default load factor (.75) offers a good tradeoff between time and space costs. Higher values decrease the space overhead but increase the lookup cost (reflected in most of the operations of theHashMap class, including get and put). </p>
+<p><strong>&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x662F;0.75&#xFF0C; &#x5B83;&#x5E73;&#x8861;&#x4E86;&#x65F6;&#x95F4;&#x548C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x3002; &#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#x8D8A;&#x5927;&#x4F1A;&#x964D;&#x4F4E;&#x7A7A;&#x95F4;&#x4F7F;&#x7528;&#x7387;&#xFF0C;&#x4F46;&#x63D0;&#x9AD8;&#x4E86;&#x67E5;&#x8BE2;&#x6027;&#x80FD;&#xFF08;&#x8868;&#x73B0;&#x5728;&#x54C8;&#x5E0C;&#x8868;&#x7684;&#x5927;&#x591A;&#x6570;&#x64CD;&#x4F5C;&#x662F;&#x8BFB;&#x53D6;&#x548C;&#x67E5;&#x8BE2;&#xFF09;</strong></p>
+<p>The expected number of entries in the map and its load factor should be taken into account when setting its initial capacity, so as to minimize the number of rehash operations. If the initial capacity is greater than the maximum number of entries divided by the load factor, no rehash operations will ever occur.</p>
+<p><strong>&#x8003;&#x8651;&#x54C8;&#x5E0C;&#x8868;&#x7684;&#x6027;&#x80FD;&#x95EE;&#x9898;&#xFF0C; &#x8981;&#x8BBE;&#x7F6E;&#x5408;&#x9002;&#x7684;&#x521D;&#x59CB;&#x5BB9;&#x91CF;&#xFF0C;&#x4ECE;&#x800C;&#x51CF;&#x5C11;rehash&#x7684;&#x6B21;&#x6570;&#x3002; &#x5F53;&#x54C8;&#x5E0C;&#x8868;&#x4E2D;entry&#x7684;&#x603B;&#x6570;&#x5C11;&#x4E8E;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#x548C;&#x521D;&#x59CB;&#x5BB9;&#x91CF;&#x4E58;&#x79EF;&#x65F6;&#xFF0C;&#x5C31;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;rehash&#x52A8;&#x4F5C;&#x3002;</strong></p>
+<p>If many mappings are to be stored in a HashMap instance, creating it with a sufficiently large capacity will allow the mappings to be stored more efficiently than letting it perform automatic rehashing as needed to grow the table. Note that using many keys with the same hashCode() is a sure way to slow down performance of any hash table. To ameliorate impact, when keys arejava.lang.Comparable, this class may use comparison order among keys to help break ties. </p>
+<p><strong>&#x5982;&#x679C;&#x6709;&#x5F88;&#x591A;&#x503C;&#x8981;&#x5B58;&#x50A8;&#x5230;HashMap&#x5B9E;&#x4F8B;&#x4E2D;&#xFF0C; &#x5728;&#x521B;&#x5EFA;HashMap&#x5B9E;&#x4F8B;&#x65F6;&#x8981;&#x8BBE;&#x7F6E;&#x8DB3;&#x591F;&#x5927;&#x7684;&#x521D;&#x59CB;&#x5BB9;&#x91CF;&#xFF0C; &#x907F;&#x514D;&#x81EA;&#x52A8;&#x6269;&#x5BB9;&#x65F6;rehash&#x3002; &#x5982;&#x679C;&#x5F88;&#x591A;&#x5173;&#x952E;&#x5B57;&#x7684;&#x54C8;&#x5E0C;&#x503C;&#x76F8;&#x540C;&#xFF0C; &#x4F1A;&#x964D;&#x4F4E;&#x54C8;&#x5E0C;&#x8868;&#x7684;&#x6027;&#x80FD;&#x3002; &#x4E3A;&#x4E86;&#x964D;&#x4F4E;&#x8FD9;&#x4E2A;&#x5F71;&#x54CD;&#xFF0C; &#x5F53;&#x5173;&#x952E;&#x5B57;&#x652F;&#x6301;java.lang.Comparable&#x65F6;&#xFF0C; &#x53EF;&#x4EE5;&#x5BF9;&#x5173;&#x952E;&#x5B57;&#x505A;&#x6B21;&#x6392;&#x5E8F;&#x4EE5;&#x964D;&#x4F4E;&#x5F71;&#x54CD;&#x3002;</strong></p>
+<p>Note that this implementation is not synchronized. If multiple threads access a hash map concurrently, and at</p>
+<p>least one of the threads modifies the map structurally, itmust be synchronized externally. (A structural modification</p>
+<p><strong>&#x54C8;&#x5E0C;&#x8868;&#x662F;&#x975E;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#xFF0C; &#x5982;&#x679C;&#x591A;&#x7EBF;&#x7A0B;&#x540C;&#x65F6;&#x8BBF;&#x95EE;&#x54C8;&#x5E0C;&#x8868;&#xFF0C; &#x4E14;&#x81F3;&#x5C11;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x4FEE;&#x6539;&#x4E86;&#x54C8;&#x5E0C;&#x8868;&#x7684;&#x7ED3;&#x6784;&#xFF0C; &#x90A3;&#x4E48;&#x5FC5;&#x987B;&#x5728;&#x8BBF;&#x95EE;hashmap&#x524D;&#x8BBE;&#x7F6E;&#x540C;&#x6B65;&#x9501;&#x3002;&#xFF08;&#x4FEE;&#x6539;&#x7ED3;&#x6784;&#x662F;&#x6307;&#x6DFB;&#x52A0;&#x6216;&#x8005;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;entry&#xFF0C; &#x4FEE;&#x6539;&#x952E;&#x503C;&#x4E0D;&#x7B97;&#x662F;&#x4FEE;&#x6539;&#x7ED3;&#x6784;&#x3002;&#xFF09;</strong></p>
+<p>is any operation that adds or deletes one or more mappings; merely changing the value associated with a key that an instance already contains is not a structural modification.) This is typically accomplished by synchronizing on some object that naturally encapsulates the map. </p>
+<p><strong>&#x4E00;&#x822C;&#x5728;&#x591A;&#x7EBF;&#x7A0B;&#x64CD;&#x4F5C;&#x54C8;&#x5E0C;&#x8868;&#x65F6;&#xFF0C;  &#x8981;&#x4F7F;&#x7528;&#x540C;&#x6B65;&#x5BF9;&#x8C61;&#x5C01;&#x88C5;map&#x3002;</strong></p>
+<p>If no such object exists, the map should be &quot;wrapped&quot; using theCollections.synchronizedMap method. This is best done at creation time, to prevent accidental unsynchronized access to the map:</p>
+<p><strong>&#x5982;&#x679C;&#x4E0D;&#x5C01;&#x88C5;Hashmap&#xFF0C; &#x53EF;&#x4EE5;&#x4F7F;&#x7528;Collections.synchronizedMap  &#x65B9;&#x6CD5;&#x8C03;&#x7528;HashMap&#x5B9E;&#x4F8B;&#x3002;  &#x5728;&#x521B;&#x5EFA;HashMap&#x5B9E;&#x4F8B;&#x65F6;&#x907F;&#x514D;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x64CD;&#x4F5C;&#x8BE5;&#x5B9E;&#x4F8B;&#xFF0C; &#x5373;&#x4FDD;&#x8BC1;&#x4E86;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x3002;</strong></p>
+<p>Map m = Collections.synchronizedMap(new HashMap(...));</p>
+<p><strong>JDK1.8&#x5BF9;&#x54C8;&#x5E0C;&#x78B0;&#x649E;&#x540E;&#x7684;&#x62C9;&#x94FE;&#x7B97;&#x6CD5;&#x8FDB;&#x884C;&#x4E86;&#x4F18;&#x5316;&#xFF0C; &#x5F53;&#x62C9;&#x94FE;&#x4E0A;entry&#x6570;&#x91CF;&#x592A;&#x591A;&#xFF08;&#x8D85;&#x8FC7;8&#x4E2A;&#xFF09;&#x65F6;&#xFF0C;&#x5C06;&#x94FE;&#x8868;&#x91CD;&#x6784;&#x4E3A;&#x7EA2;&#x9ED1;&#x6811;&#x3002;  &#x4E0B;&#x9762;&#x662F;&#x6E90;&#x7801;&#x76F8;&#x5173;&#x7684;&#x6CE8;&#x91CA;&#xFF1A;</strong></p>
+<blockquote>
+<ul>
+<li>This map usually acts as a binned (bucketed) hash table, but<ul>
+<li>when bins get too large, they are transformed into bins of</li>
+<li>TreeNodes, each structured similarly to those in</li>
+<li>java.util.TreeMap. Most methods try to use normal bins, but</li>
+<li>relay to TreeNode methods when applicable (simply by checking</li>
+<li>instanceof a node).  Bins of TreeNodes may be traversed and</li>
+<li>used like any others, but additionally support faster lookup</li>
+<li>when overpopulated. However, since the vast majority of bins in</li>
+<li>normal use are not overpopulated, checking for existence of</li>
+<li>tree bins may be delayed in the course of table methods.</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>&#x770B;&#x770B;HashMap&#x7684;&#x51E0;&#x4E2A;&#x91CD;&#x8981;&#x6210;&#x5458;&#x53D8;&#x91CF;&#xFF1A;</p>
+<p> //The default initial capacity - MUST be a power of two.</p>
+<p>static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; //&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x5199;&#x6210;16&#xFF1F;&#xFF1F;&#xFF1F; &#x5927;&#x5E08;&#x662F;&#x60F3;&#x7528;&#x8FD9;&#x79CD;&#x5199;&#x6CD5;&#x544A;&#x8BC9;&#x4F60;&#x53EA;&#x80FD;&#x662F;2&#x7684;&#x5E42;</p>
+<p><strong>HashMap&#x7684;&#x521D;&#x59CB;&#x5BB9;&#x91CF;&#x662F;16&#x4E2A;&#xFF0C; &#x800C;&#x4E14;&#x5BB9;&#x91CF;&#x53EA;&#x80FD;&#x662F;2&#x7684;&#x5E42;&#x3002;  &#x6BCF;&#x6B21;&#x6269;&#x5BB9;&#x65F6;&#x90FD;&#x662F;&#x53D8;&#x6210;&#x539F;&#x6765;&#x7684;2&#x500D;&#x3002;</strong></p>
+<p>static final float DEFAULT_LOAD_FACTOR = 0.75f;</p>
+<p>&#x9ED8;&#x8BA4;&#x7684;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#x662F;0.75f&#xFF0C; 16*0.75=12&#x3002;&#x5373;&#x9ED8;&#x8BA4;&#x7684;HashMap&#x5B9E;&#x4F8B;&#x5728;&#x63D2;&#x5165;&#x7B2C;13&#x4E2A;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x4F1A;&#x6269;&#x5BB9;&#x4E3A;32&#x3002;</p>
+<p>The bin count threshold for using a tree rather than list for a bin. Bins are converted to trees when adding an element to a bin with at least this many nodes. The value must be greater than 2 and should be at least 8 to mesh with assumptions in tree removal about conversion back to plain bins upon shrinkage.
+static final int TREEIFY_THRESHOLD = 8;</p>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;&#x8FD9;&#x662F;JDK1.8&#x5BF9;HashMap&#x7684;&#x4F18;&#x5316;&#xFF0C; &#x54C8;&#x5E0C;&#x78B0;&#x649E;&#x540E;&#x7684;&#x94FE;&#x8868;&#x4E0A;&#x8FBE;&#x5230;8&#x4E2A;&#x8282;&#x70B9;&#x65F6;&#x8981;&#x5C06;&#x94FE;&#x8868;&#x91CD;&#x6784;&#x4E3A;&#x7EA2;&#x9ED1;&#x6811;&#xFF0C;  &#x67E5;&#x8BE2;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x53D8;&#x4E3A;O(logN)&#x3002;</strong></p>
+<p>The table, initialized on first use, and resized as necessary. When allocated, length is always a power of two. (We also tolerate length zero in some operations to allow bootstrapping mechanics that are currently not needed.) 
+transient Node<k,v>[] table;  //HashMap&#x7684;&#x6876;&#xFF0C; &#x5982;&#x679C;&#x6CA1;&#x6709;&#x54C8;&#x5E0C;&#x78B0;&#x649E;&#xFF0C; HashMap&#x5C31;&#x662F;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x6211;&#x8BF4;&#x7684;&#x662F;&#x5982;&#x679C;&#x5410;&#x820C;&#x5934;&#x3002;  &#x6570;&#x7EC4;&#x7684;&#x67E5;&#x8BE2;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x662F;O(1)&#xFF0C;&#x6240;&#x4EE5;HashMap&#x7406;&#x60F3;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x662F;O(1)&#xFF1B;&#x5982;&#x679C;&#x6240;&#x6709;&#x6570;&#x636E;&#x90FD;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x4E0B;&#x6807;&#x4F4D;&#x7F6E;&#xFF0C; &#x5373;N&#x4E2A;&#x6570;&#x636E;&#x7EC4;&#x6210;&#x94FE;&#x8868;&#xFF0C;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(n)&#xFF0C; &#x6240;&#x4EE5;HashMap&#x7684;&#x6700;&#x5DEE;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(n)&#x3002;&#x5982;&#x679C;&#x94FE;&#x8868;&#x8FBE;&#x5230;8&#x4E2A;&#x5143;&#x7D20;&#x65F6;&#x91CD;&#x6784;&#x4E3A;&#x7EA2;&#x9ED1;&#x6811;&#xFF0C;&#x800C;&#x7EA2;&#x9ED1;&#x6811;&#x7684;&#x67E5;&#x8BE2;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(logN), &#x6240;&#x4EE5;&#x8FD9;&#x65F6;HashMap&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(logN)&#x3002;</k,v></p>
+<p>Holds cached entrySet(). Note that AbstractMap fields are used for keySet() and values().
+transient Set<map.entry<k,v>&gt; entrySet; //HashMap&#x6240;&#x6709;&#x7684;&#x503C;&#xFF0C;&#x56E0;&#x4E3A;&#x7528;&#x4E86;Set&#xFF0C; &#x6240;&#x4EE5;HashMap&#x4E0D;&#x4F1A;&#x6709;key&#x3001;value&#x90FD;&#x76F8;&#x540C;&#x7684;&#x6570;&#x636E;&#x3002;</map.entry<k,v></p>
+<p>1&#x3001; &#x54C8;&#x5E0C;&#x78B0;&#x649E;&#x7684;&#x539F;&#x56E0;&#x548C;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;
+&#x54C8;&#x5E0C;&#x78B0;&#x649E;&#x662F;&#x4E0D;&#x540C;&#x7684;key&#x503C;&#x627E;&#x5230;&#x76F8;&#x540C;&#x7684;&#x4E0B;&#x6807;&#xFF0C;  &#x5BF9;&#x5E94;HashMap&#x91CC;hashcode&#x548C;&#x5BB9;&#x91CF;&#x7684;&#x6A21;&#x76F8;&#x540C;&#x3002;</p>
+<p>&#x6E90;&#x7801;629&#x884C;    <big>if ((p = tab[i = (n - 1) &amp; hash]) == null)</big>&#xFF0C; &#x5176;&#x4E2D;n&#x662F;&#x5BB9;&#x91CF;&#x503C;&#xFF0C;    &#x5373;&#x7528;&#x54C8;&#x5E0C;&#x503C;&#x548C;&#x5BB9;&#x91CF;&#x76F8;&#x4E0E;&#x5F97;&#x5230;&#x8981;&#x4FDD;&#x5B58;&#x7684;&#x4F4D;&#x7F6E;&#x3002; &#x5982;&#x679C;&#x4E0D;&#x540C;Key&#x7684;(n - 1) &amp; hash&#x76F8;&#x540C;&#xFF0C; &#x90A3;&#x4E48;&#x8981;&#x5B58;&#x50A8;&#x5230;&#x540C;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x4E0B;&#x6807;&#x4F4D;&#x7F6E;&#xFF0C; &#x8FD9;&#x4E2A;&#x73B0;&#x8C61;&#x5C31;&#x53EB;&#x54C8;&#x5E0C;&#x78B0;&#x649E;&#x3002;</p>
+<pre><code>final V putVal(int hash, K key, V value, boolean onlyIfAbsent,boolean evict) {
+      if ((p = tab[i = (n - 1) &amp; hash]) == null)     //&#x5982;&#x679C;&#x8BE5;&#x4E0B;&#x6807;&#x6CA1;&#x503C;&#xFF0C;&#x5219;&#x5B58;&#x50A8;&#x5230;&#x8BE5;&#x4E0B;&#x6807;&#x4F4D;&#x7F6E;
+             tab[i] = newNode(hash, key, value, null);      
+         else {
+             Node&lt;K,V&gt; e; K k;
+             if (p.hash == hash &amp;&amp;
+                 ((k = p.key) == key || (key != null &amp;&amp; key.equals(k))))
+                 e = p;      //&#x5982;&#x679C;&#x54C8;&#x5E0C;&#x503C;&#x76F8;&#x540C;&#x800C;&#x4E14;key&#x76F8;&#x540C;&#xFF0C; &#x5219;&#x66F4;&#x65B0;&#x952E;&#x503C;
+             else if (p instanceof TreeNode)
+                 e = ((TreeNode&lt;K,V&gt;)p).putTreeVal(this, tab, hash, key, value);  //&#x5982;&#x679C;&#x4E0B;&#x6807;&#x6570;&#x636E;&#x662F;TreeNode&#x7C7B;&#x578B;&#xFF0C;&#x5219;&#x5C06;&#x65B0;&#x6570;&#x636E;&#x6DFB;&#x52A0;&#x5230;&#x7EA2;&#x9ED1;&#x6811;&#x4E2D;&#x3002;
+             else {
+                 for (int binCount = 0; ; ++binCount) {
+                     if ((e = p.next) == null) {
+                         p.next = newNode(hash, key, value, null);   //&#x5C06;&#x65B0;Node&#x6DFB;&#x52A0;&#x5230;&#x94FE;&#x8868;&#x672B;&#x5C3E;
+                         if (binCount &gt;= TREEIFY_THRESHOLD - 1) // -1 for 1st
+                             treeifyBin(tab, hash);    //&#x5982;&#x679C;&#x94FE;&#x8868;&#x4E2A;&#x6570;&#x8FBE;&#x5230;8&#x4E2A;&#x65F6;&#xFF0C;&#x5C06;&#x94FE;&#x8868;&#x4FEE;&#x6539;&#x4E3A;&#x7EA2;&#x9ED1;&#x6811;&#x7ED3;&#x6784;
+                         break;
+                     }     
+           //&#x7701;&#x7565;&#x82E5;&#x5E72;&#x884C;&#x4EE3;&#x7801;          
+ }
+</code></pre><p>2&#x3001;JDK1.8&#x5BF9;HashMap&#x6700;&#x5927;&#x7684;&#x4F18;&#x5316;&#x662F;resize&#x51FD;&#x6570;&#xFF0C;  &#x5728;&#x6269;&#x5BB9;&#x65F6;&#x4E0D;&#x518D;&#x9700;&#x8981;rehash&#x4E86;&#xFF0C; &#x4E0B;&#x9762;&#x5C31;&#x770B;&#x770B;&#x5927;&#x5E08;&#x662F;&#x600E;&#x4E48;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<p>Initializes or doubles table size. If null, allocates in accord with initial capacity target held in field threshold. Otherwise, because we are using power-of-two expansion, the elements from each bin must either stay at same index, or move with a power of two offset in the new table.</p>
+<p>&#x521D;&#x59CB;&#x5316;&#x6570;&#x7EC4;&#x6216;&#x8005;&#x6269;&#x5BB9;&#x4E3A;2&#x500D;&#xFF0C;   &#x521D;&#x503C;&#x4E3A;&#x7A7A;&#x65F6;&#xFF0C;&#x5219;&#x6839;&#x636E;&#x521D;&#x59CB;&#x5BB9;&#x91CF;&#x5F00;&#x8F9F;&#x7A7A;&#x95F4;&#x6765;&#x521B;&#x5EFA;&#x6570;&#x7EC4;&#x3002;&#x5426;&#x5219;&#xFF0C; &#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x4F7F;&#x7528;2&#x7684;&#x5E42;&#x5B9A;&#x4E49;&#x6570;&#x7EC4;&#x5927;&#x5C0F;&#xFF0C;&#x6570;&#x636E;&#x8981;&#x4E48;&#x5F85;&#x5728;&#x539F;&#x6765;&#x7684;&#x4E0B;&#x6807;&#xFF0C; &#x6216;&#x8005;&#x79FB;&#x52A8;&#x5230;&#x65B0;&#x6570;&#x7EC4;&#x7684;&#x9AD8;&#x4F4D;&#x4E0B;&#x6807;&#x3002; &#xFF08;&#x4E3E;&#x4F8B;&#xFF1A; &#x521D;&#x59CB;&#x6570;&#x7EC4;&#x662F;16&#x4E2A;&#xFF0C;&#x5047;&#x5982;&#x6709;2&#x4E2A;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5728;&#x4E0B;&#x6807;&#x4E3A;1&#x7684;&#x4F4D;&#x7F6E;&#xFF0C; &#x6269;&#x5BB9;&#x540E;&#x8FD9;2&#x4E2A;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x5B58;&#x5728;&#x4E0B;&#x6807;&#x4E3A;1&#x6216;&#x8005;16+1&#x7684;&#x4F4D;&#x7F6E;&#xFF09;</p>
+<pre><code>final Node&lt;K,V&gt;[] resize() {
+   newThr = oldThr &lt;&lt; 1; // double threshold,   &#x5927;&#x5C0F;&#x6269;&#x5927;&#x4E3A;2&#x500D;&#xFF0C;&#x51FA;&#x4E8E;&#x6027;&#x80FD;&#x8003;&#x8651;&#x548C;&#x8005;&#x544A;&#x8BC9;&#x4F7F;&#x7528;&#x8005;&#x5B83;&#x662F;2&#x7684;&#x5E42;&#xFF0C; &#x8FD9;&#x91CC;&#x7528;&#x7684;&#x662F;&#x4F4D;&#x79FB;&#xFF0C; &#x800C;&#x4E0D;&#x662F;*2&#xFF0C;
+   if (e.next == null)
+      newTab[e.hash &amp; (newCap - 1)] = e;  //&#x5982;&#x679C;&#x8BE5;&#x4E0B;&#x6807;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#xFF0C;&#x5219;&#x6563;&#x5217;&#x5230;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x6216;&#x8005;&#x9AD8;&#x4F4D;&#x5BF9;&#x5E94;&#x4F4D;&#x7F6E;&#xFF08;&#x4EE5;&#x7B2C;&#x4E00;&#x6B21;resize&#x4E3A;&#x4F8B;&#xFF0C;&#x539F;&#x6765;&#x5728;&#x7B2C;4&#x4E2A;&#x4F4D;&#x7F6E;&#xFF0C;resize&#x540E;&#x4F1A;&#x5B58;&#x50A8;&#x5230;&#x7B2C;4&#x4E2A;&#x6216;&#x8005;&#x7B2C;4+16&#x4E2A;&#x4F4D;&#x7F6E;&#xFF09;
+  else if (e instanceof TreeNode)
+     ((TreeNode&lt;K,V&gt;)e).split(this, newTab, j, oldCap);  //&#x7EA2;&#x9ED1;&#x6811;&#x91CD;&#x6784;
+  else {
+     do {
+        next = e.next;
+        if ((e.hash &amp; oldCap) == 0) {    
+            if (loTail == null)
+               loHead = e;
+            else
+            loTail.next = e;
+            loTail = e;
+        } else {
+            if (hiTail == null)
+               hiHead = e;
+            else
+               hiTail.next = e;
+               hiTail = e;
+         }
+      } while ((e = next) != null);
+      if (loTail != null) {
+          loTail.next = null;
+          newTab[j] = loHead;   //&#x4E0B;&#x6807;&#x4E0D;&#x53D8;
+      }
+      if (hiTail != null) {
+          hiTail.next = null;
+          newTab[j + oldCap] = hiHead; //&#x4E0B;&#x6807;&#x4F4D;&#x7F6E;&#x79FB;&#x52A8;&#x539F;&#x6765;&#x5BB9;&#x91CF;&#x5927;&#x5C0F;
+      }
+</code></pre><p> <strong>(e.hash &amp; oldCap) == 0</strong>&#x5199;&#x7684;&#x5F88;&#x8D5E;&#xFF01;&#xFF01;&#xFF01; &#x5B83;&#x5C06;&#x539F;&#x6765;&#x7684;&#x94FE;&#x8868;&#x6570;&#x636E;&#x6563;&#x5217;&#x5230;2&#x4E2A;&#x4E0B;&#x6807;&#x4F4D;&#x7F6E;&#xFF0C;  &#x6982;&#x7387;&#x662F;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;50%&#xFF0C;&#x9AD8;&#x4F4D;&#x4F4D;&#x7F6E;50%&#x3002;     &#x4F60;&#x53EF;&#x80FD;&#x6709;&#x70B9;&#x61F5;&#x6BD4;&#xFF0C; &#x4E0B;&#x9762;&#x4E3E;&#x4F8B;&#x8BF4;&#x660E;&#x3002;  &#x4E0A;&#x8FB9;&#x56FE;&#x4E2D;&#x7B2C;0&#x4E2A;&#x4E0B;&#x6807;&#x6709;496&#x548C;896&#xFF0C;  &#x5047;&#x8BBE;&#x5B83;&#x4FE9;&#x7684;hashcode(int&#x578B;&#xFF0C;&#x5360;4&#x4E2A;&#x5B57;&#x8282;)&#x662F;</p>
+<p> resize&#x524D;&#xFF1A;</p>
+<p>496&#x7684;hashcode: 00000000  00000000  00000000  00000000</p>
+<p>896&#x7684;hashcode: 01010000  01100000  10000000  00100000</p>
+<p>oldCap&#x662F;16: ###00000000  00000000  00000000  00010000</p>
+<p>496&#x548C;896&#x5BF9;&#x5E94;&#x7684;<strong>e.hash &amp; oldCap</strong>&#x7684;&#x503C;&#x4E3A;0&#xFF0C; &#x5373;&#x4E0B;&#x6807;&#x90FD;&#x662F;&#x7B2C;0&#x4E2A;&#x3002;</p>
+<p>resize&#x540E;&#xFF1A;</p>
+<p>496&#x7684;hashcode: 00000000  00000000  00000000  00000000</p>
+<p>896&#x7684;hashcode: 01010000  01100000  10000000  00100000</p>
+<p>oldCap&#x662F;32: ###00000000  00000000  00000000  00100000</p>
+<p>496&#x548C;896&#x5BF9;&#x5E94;&#x7684;<em>**</em>&#x7684;&#x503C;&#x4E3A;0&#x548C;1&#xFF0C; &#x5373;&#x4E0B;&#x6807;&#x90FD;&#x662F;&#x7B2C;0&#x4E2A;&#x548C;&#x7B2C;16&#x4E2A;&#x3002;</p>
+<p>&#x770B;&#x660E;&#x767D;&#x4E86;&#x5417;&#xFF1F;   &#x56E0;&#x4E3A;hashcode&#x7684;&#x7B2C;n&#x4F4D;&#x662F;0/1&#x7684;&#x6982;&#x7387;&#x76F8;&#x540C;&#xFF0C; &#x7406;&#x8BBA;&#x4E0A;&#x94FE;&#x8868;&#x7684;&#x6570;&#x636E;&#x4F1A;&#x5747;&#x5300;&#x5206;&#x5E03;&#x5230;&#x5F53;&#x524D;&#x4E0B;&#x6807;&#x6216;&#x9AD8;&#x4F4D;&#x6570;&#x7EC4;&#x5BF9;&#x5E94;&#x4E0B;&#x6807;&#x3002;</p>
+<p>   &#x56DE;&#x987E;JDK1.7&#x7684;HashMap&#xFF0C;&#x5728;&#x6269;&#x5BB9;&#x65F6;&#x4F1A;rehash&#x5373;&#x6BCF;&#x4E2A;entry&#x7684;&#x4F4D;&#x7F6E;&#x90FD;&#x8981;&#x518D;&#x8BA1;&#x7B97;&#x4E00;&#x904D;&#xFF0C;  &#x6027;&#x80FD;&#x4E0D;&#x597D;&#x5440;&#xFF0C; &#x6240;&#x4EE5;JDK1.8&#x505A;&#x4E86;&#x8FD9;&#x4E2A;&#x4F18;&#x5316;&#x3002;</p>
+<p>  &#x518D;&#x56DE;&#x5230;&#x6587;&#x7AE0;&#x6700;&#x5F00;&#x59CB;&#x7684;&#x95EE;&#x9898;&#xFF0C; HashMap&#x4E3A;&#x4EC0;&#x4E48;&#x7528;&amp;&#x5F97;&#x5230;&#x4E0B;&#x6807;&#xFF0C;&#x800C;&#x4E0D;&#x662F;%&#xFF1F; &#x5982;&#x679C;&#x4F7F;&#x7528;&#x4E86;&#x53D6;&#x6A21;%&#xFF0C; &#x90A3;&#x4E48;&#x5728;&#x5BB9;&#x91CF;&#x53D8;&#x4E3A;2&#x500D;&#x65F6;&#xFF0C; &#x9700;&#x8981;rehash&#x786E;&#x5B9A;&#x6BCF;&#x4E2A;&#x94FE;&#x8868;&#x5143;&#x7D20;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="解决安卓贝壳找房APP首页滑动卡顿问题.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 安卓卡顿原因分析">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"HashMap源码分析","level":"1.2.1","depth":2,"next":{"title":"安卓卡顿原因分析","level":"1.2.2","depth":2,"path":"Chapter1/解决安卓贝壳找房APP首页滑动卡顿问题.md","ref":"Chapter1/解决安卓贝壳找房APP首页滑动卡顿问题.md","articles":[]},"previous":{"title":"基础知识","level":"1.2","depth":1,"ref":"","articles":[{"title":"HashMap源码分析","level":"1.2.1","depth":2,"path":"Chapter1/HashMap源码分析.md","ref":"Chapter1/HashMap源码分析.md","articles":[]},{"title":"安卓卡顿原因分析","level":"1.2.2","depth":2,"path":"Chapter1/解决安卓贝壳找房APP首页滑动卡顿问题.md","ref":"Chapter1/解决安卓贝壳找房APP首页滑动卡顿问题.md","articles":[]},{"title":"精细化曝光策略","level":"1.2.3","depth":2,"path":"Chapter1/精细化曝光策略.md","ref":"Chapter1/精细化曝光策略.md","articles":[]},{"title":"贝壳找房解决全局悬浮窗问题","level":"1.2.4","depth":2,"path":"Chapter1/贝壳找房解决全局悬浮窗问题.md","ref":"Chapter1/贝壳找房解决全局悬浮窗问题.md","articles":[]},{"title":"自定义gradle插件","level":"1.2.5","depth":2,"path":"Chapter1/自定义android gradle插件.md","ref":"Chapter1/自定义android gradle插件.md","articles":[]},{"title":"贝壳找房适配动态权限","level":"1.2.6","depth":2,"path":"Chapter1/贝壳找房适配动态权限.md","ref":"Chapter1/贝壳找房适配动态权限.md","articles":[]},{"title":"Lint解决线上问题","level":"1.2.7","depth":2,"path":"Chapter1/Lint解决线上问题.md","ref":"Chapter1/Lint解决线上问题.md","articles":[]},{"title":"Android9启动Activity流程","level":"1.2.8","depth":2,"path":"Chapter1/安卓9启动Activity流程分析和优化建议.md","ref":"Chapter1/安卓9启动Activity流程分析和优化建议.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","anchors","expandable-chapters","github","github-buttons","sharing-plus","anchor-navigation-ex","favicon","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":""},"livereload":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{},"github-buttons":{"buttons":[{"user":"Blankj","repo":"glory","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{}},"theme":"default","author":"brycegao","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","links":{"sidebar":{"技术沉淀":"http://git.lianjia.com/luweiyu001/lion/wikis"}},"gitbook":"3.2.3","description":"show me the code"},"file":{"path":"Chapter1/HashMap源码分析.md","mtime":"2018-08-02T13:20:27.840Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-06T09:23:28.786Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

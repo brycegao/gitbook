@@ -12,16 +12,23 @@
     },
     "links": {
         "sidebar": {
-            "我的博客": "https://blog.csdn.net/brycegao321?orderby=ViewCount"
+           "技术沉淀": "http://git.lianjia.com/luweiyu001/lion/wikis"
         }
     },
     "plugins": [
+        "-sharing",
+        "splitter",
+        "anchors",
+        "expandable-chapters",
         "github",
-        "github-buttons"
+        "github-buttons",
+        "sharing-plus",
+        "anchor-navigation-ex",
+        "favicon"
     ],
     "pluginsConfig": {
         "github": {
-            "url": "https://github.com/brycegao/gitbook"
+            "url": ""
         },
         "github-buttons": {
             "buttons": [{
