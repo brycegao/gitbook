@@ -12,7 +12,7 @@
     },
     "links": {
         "sidebar": {
-           "技术沉淀": "http://git.lianjia.com/luweiyu001/lion/wikis"
+           "技术博客": "https://blog.csdn.net/brycegao321?orderby=ViewCount"
         }
     },
     "plugins": [
@@ -28,12 +28,12 @@
     ],
     "pluginsConfig": {
         "github": {
-            "url": ""
+            "url": "https://github.com/brycegao/gitbook"
         },
         "github-buttons": {
             "buttons": [{
-                "user": "Blankj",
-                "repo": "glory",
+                "user": "brycegao",
+                "repo": "gitbook",
                 "type": "star",
                 "size": "small",
                 "count": true

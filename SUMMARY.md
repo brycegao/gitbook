@@ -10,7 +10,7 @@
    * [贝壳找房适配动态权限](Chapter1/贝壳找房适配动态权限.md)
    * [Lint解决线上问题](Chapter1/Lint解决线上问题.md)
    * [Android9启动Activity流程](Chapter1/安卓9启动Activity流程分析和优化建议.md)
-* 章节2
-   * [Chapter](Chapter2/1.md)
-   * [测试标题](Chapter2/2.md)
+* 开发技巧
+   * [深入理解ClassLoader](Chapter2/1.md)
+   * [自动解析bundle](Chapter2/parsebundle.md)
 
